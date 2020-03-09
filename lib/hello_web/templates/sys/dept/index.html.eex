@@ -1,0 +1,165 @@
+
+<body class="gray-bg">
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+			<%= form_for @conn, sys_dept_path(@conn, :list_data), [method: :post,id: "searchForm" ], fn f -> %>
+
+					<div class="select-list">
+						<ul>
+							<li>
+                            上级部门：
+                             <%= hidden_input f, :parent_id,id: "treeId" %>
+							 <input type="text" id="treeName" onclick="selectDeptTree()" readonly="true">
+							</li>
+							<li>
+                            部门名称：<input type="text" name="deptName"/>
+							</li>
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.treeTable.search()"><i class="fa fa-search"></i>&nbsp;<%= gettext("Search")%></a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="reset()"><i class="fa fa-refresh"></i>&nbsp;<%= gettext("Reset")%></a>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+
+	        <div class="btn-group-sm" id="toolbar" role="group">
+	             <a class="btn btn-info" id="expandAllBtn">
+                  <i class="fa fa-exchange"></i> 展开/折叠
+                 </a>
+		        <a class="btn btn-success" onclick="$.operate.add()" >
+		            <i class="fa fa-plus"></i> <%= gettext("New")%>
+		        </a>
+		        <a class="btn btn-primary" onclick="$.operate.edit()">
+                    <i class="fa fa-edit"></i> <%= gettext("Update")%>
+                </a>
+		        <a class="btn btn-danger multiple " onclick="$.operate.removeAll()" >
+		            <i class="fa fa-remove"></i> <%= gettext("Delete")%>
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()" >
+		            <i class="fa fa-download"></i> <%= gettext("Export")%>
+		        </a>
+	        </div>
+           <div class="col-sm-12 select-table table-striped">
+	            <table id="bootstrap-tree-table"></table>
+	        </div>
+	    </div>
+	</div>
+
+    <script>
+    var datas = <%=  raw get_dict_json("sys_normal_disable")%>;
+        $(function() {
+            var options = {
+                code: "id",
+                parentCode: "parent_id",
+                uniqueId: "id",
+                ajaxParams: $.common.formToJSON("searchForm"),
+                formId: "searchForm",
+                url: "<%= sys_dept_path(@conn, :list_data)%>",
+                createUrl: "<%= sys_dept_path(@conn, :new)%>"+"?id=100",
+                updateUrl: '<%= sys_dept_path(@conn, :edit,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                removeUrl: '<%= sys_dept_path(@conn, :delete,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+
+
+                modalName: '<%= dgettext("sys_dept","Dept")%>',
+
+                columns: [{
+                  field: 'selectItem',
+                  radio: true
+                  }
+                  ,
+                     {
+                       field: 'dept_name',
+                       title: '<%= dgettext("sys_dept","Dept name")%>',
+                       align: "left"
+                     },
+
+                     {
+                       field: 'leader',
+                       title: '<%= dgettext("sys_dept","Leader")%>',
+
+                     },
+                    
+                     {
+                       field: 'phone',
+                       title: '<%= dgettext("sys_dept","Phone")%>',
+                       align: "left"
+                     },
+                    
+                     {
+                       field: 'email',
+                       title: '<%= dgettext("sys_dept","Email")%>',
+                       align: "left"
+                     },
+                    
+                     {
+                       field: 'status',
+                       title: '<%= gettext("Status")%>',
+                       align: "left",
+                        formatter: function(value, item, index) {
+                       	  return $.table.selectDictLabel(datas, item.status);
+                       }
+                     },
+                    
+                     {
+                       field: 'inserted_by.user_name',
+                       title: '<%= gettext("Inserted by")%>',
+                       align: "left"
+                     },
+                    
+                     {
+                       field: 'updated_by.user_name',
+                       title: '<%= gettext("Updated by")%>',
+                       align: "left"
+                     },
+                    
+                     {
+                       field: 'remark',
+                       title: '<%= gettext("Remark")%>',
+                       align: "left"
+                     },
+                 {
+                    title: '<%= gettext("Action")%>',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                         actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i><%= gettext("Update")%></a> ');
+                         actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i><%= gettext("Delete")%></a>');
+                         return actions.join('');
+                    }
+                }]
+            };
+            $.treeTable.init(options);
+        });
+		function selectDeptTree() {
+			var deptId = $("#treeId").val();
+			//if($.common.isNotEmpty(deptId  )) {
+			    var options = {
+					title: '部门选择',
+					width: "380",
+					url: '<%= sys_dept_path(@conn, :selectDeptTree)%>?id='+$("#treeId").val(),
+					callBack: doSubmit
+				};
+				$.modal.openOptions(options);
+			// } else {
+        	// 	$.modal.alertError("顶级部门不用选择父部门");
+        	// }
+		}
+
+		function doSubmit(index, layero){
+			var tree = layero.find("iframe")[0].contentWindow.$._tree;
+			//if ($.tree.notAllowLastLevel(tree)) {
+	   			var body = layer.getChildFrame('body', index);
+	   			$("#treeId").val(body.find('#treeId').val());
+	   			$("#treeName").val(body.find('#treeName').val());
+	   			layer.close(index);
+			//}
+		}
+		function reset(){
+		    $.form.reset();
+		    $("#treeId").val("");
+		}
+    </script>
+</body>
+</html>

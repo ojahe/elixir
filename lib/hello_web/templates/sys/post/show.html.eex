@@ -1,0 +1,48 @@
+<h1>Show Post</h1>
+
+<ul>
+
+  <li>
+    <strong>Post name:</strong>
+    <%= @post.post_name %>
+  </li>
+
+  <li>
+    <strong>Post code:</strong>
+    <%= @post.post_code %>
+  </li>
+
+  <li>
+    <strong>Post sort:</strong>
+    <%= @post.post_sort %>
+  </li>
+
+  <li>
+    <strong>Data scope:</strong>
+    <%= @post.data_scope %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @post.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @post.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @post.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @post.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>

@@ -1,0 +1,17 @@
+msgid "Post"
+msgstr "岗位"
+
+msgid "Post name"
+msgstr "岗位名称"
+
+msgid "Post code"
+msgstr "岗位编码"
+
+msgid "Post sort"
+msgstr "显示顺序"
+
+msgid "Data scope"
+msgstr "数据范围"
+
+msgid "Dept name"
+msgstr "所属部门"

@@ -1,0 +1,70 @@
+msgid "User"
+msgstr "用户"
+
+msgid "User code"
+msgstr "用户编号"
+
+msgid "User name"
+msgstr "姓名"
+
+msgid "Login name"
+msgstr "登录名"
+
+msgid "User type"
+msgstr "用户类型"
+
+msgid "Title"
+msgstr "职务"
+
+msgid "Email"
+msgstr "邮箱"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Sex"
+msgstr "性别"
+
+msgid "Avatar"
+msgstr "头像"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Salt"
+msgstr "密码盐"
+
+msgid "Login ip"
+msgstr "最后登录IP"
+
+msgid "Login date"
+msgstr "最后登录时间"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+
+msgid "Inserted at"
+msgstr "创建时间"
+
+msgid "Updated at"
+msgstr "修改时间"
+
+msgid "Remark"
+msgstr "备注"
+
+msgid "Dept name"
+msgstr "所属部门"
+
+msgid "roles"
+msgstr "所属角色"
+
+msgid "posts"
+msgstr "所属岗位"
+
+

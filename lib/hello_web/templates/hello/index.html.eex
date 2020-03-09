@@ -1,0 +1,45 @@
+  <!DOCTYPE html>
+  <html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+      <title>登录圣河系统</title>
+      <meta name="description" content="圣河后台管理框架">
+
+      <link href="<%= static_path(@conn, "/css/login.min.css") %>" rel="stylesheet"/>
+
+      <!--[if lt IE 9]>
+      <meta http-equiv="refresh" content="0;ie.html" />
+      <![endif]-->
+      <link href="<%= static_path(@conn, "/static/favicon.ico") %>" rel="stylesheet"/>
+      <style type="text/css">label.error { position:inherit;  }</style>
+
+  </head>
+
+  <body>
+    <div class="signinpanel">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="signin-info">
+                    <div class="logopanel m-b">
+                        <h1><img alt="[ 圣河 ]" src="<%= static_path(@conn, "/img/logo.png") %>"></h1>
+                    </div>
+                    <div class="m-b"></div>
+                    <h4>欢迎使用 <strong>圣河后台管理系统</strong></h4>
+                    <ul class="m-b">
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Elixir</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Phoenix</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Ecto</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> jQuery</li>
+                        <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
+                    </ul>
+                    <strong> <a href="#" onclick=""></a></strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </body>
+    </html>

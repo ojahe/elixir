@@ -1,0 +1,84 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+              
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role name") %>">
+								<span class="required ">*</span> <%= label f, :role_name,dgettext("sys_role","Role name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :role_name,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role code") %>">
+								<span class="required ">*</span> <%= label f, :role_code,dgettext("sys_role","Role code") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :role_code,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role sort") %>">
+								<span class="required ">*</span> <%= label f, :role_sort,dgettext("sys_role","Role sort") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= number_input f, :role_sort,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           <div class="row">
+			    <div class="col-xs-12">
+					 <div class="form-group">
+						 <label class="control-label col-sm-3" title="<%= gettext("Status") %>">
+							 <span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
+					     <div class="col-sm-8">
+						     <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+						 </div>
+					 </div>
+				 </div>
+				  </div>
+                <div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="role_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#role_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+</script>
+</body>

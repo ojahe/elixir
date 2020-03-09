@@ -1,0 +1,274 @@
+<link href="<%= static_path(@conn, "/ajax/libs/jquery-ztree/3.5/css/metro/zTreeStyle.css") %>" rel="stylesheet"/>
+<body class="gray-bg">
+	<div class="ui-layout-west">
+		<div class="box box-main">
+			<div class="box-header">
+				<div class="box-title">
+					<i class="fa icon-grid"></i> 组织机构
+				</div>
+				<div class="box-tools pull-right">
+				    <a type="button" class="btn btn-box-tool" href="#" onclick="dept()" title="管理部门"><i class="fa fa-edit"></i></a>
+					<button type="button" class="btn btn-box-tool" id="btnExpand" title="展开" style="display:none;"><i class="fa fa-chevron-up"></i></button>
+					<button type="button" class="btn btn-box-tool" id="btnCollapse" title="折叠"><i class="fa fa-chevron-down"></i></button>
+					<button type="button" class="btn btn-box-tool" id="btnRefresh" title="刷新部门"><i class="fa fa-refresh"></i></button>
+				</div>
+			</div>
+			<div class="ui-layout-content">
+				<div id="tree" class="ztree"></div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-layout-center">
+      <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+			<%= 	form_for @conn, sys_post_path(@conn, :list_data), [method: :post,id: "searchForm" ], fn f -> %>
+					<input type="hidden" id="deptId" name="deptId">
+		            <input type="hidden" id="parentId" name="parentId">
+					<div class="select-list">
+						<ul>
+								<li>
+									名称：<%= text_input f, :post_name %>
+								</li>
+								<li>
+								 <%= gettext("Status")%>：<%= select f, :status,get_dict_list("sys_normal_disable")     %>
+								</li>
+								<li class="select-time">
+									<label>创建时间： </label>
+									<input type="text" class="time-input" id="startTime" placeholder="开始时间" name="beginTime"/>
+									<span>-</span>
+									<input type="text" class="time-input" id="endTime" placeholder="结束时间" name="endTime"/>
+								</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;<%= gettext("Search")%></a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;<%= gettext("Reset")%></a>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+
+	        <div class="btn-group-sm" id="toolbar" role="group">
+		        <a class="btn btn-success" onclick="addnew()" >
+		            <i class="fa fa-plus"></i> <%= gettext("New")%>
+		        </a>
+		        <a class="btn btn-primary single disabled" onclick="$.operate.edit()" >
+		            <i class="fa fa-edit"></i> <%= gettext("Update")%>
+		        </a>
+		        <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" >
+		            <i class="fa fa-remove"></i> <%= gettext("Delete")%>
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()" >
+		            <i class="fa fa-download"></i> <%= gettext("Export")%>
+		        </a>
+	        </div>
+	        <div class="col-sm-12 select-table table-striped">
+	            <table id="bootstrap-table"></table>
+	        </div>
+	    </div>
+	</div>
+    </div>
+     <script src="<%= static_path(@conn, "/ajax/libs/jquery-ztree/3.5/js/jquery.ztree.all-3.5.js") %>"></script>
+    <script>
+    var datas = <%=  raw get_dict_json("sys_normal_disable")%>;
+		$(function() {
+		    var panehHidden = false;
+		    if ($(this).width() < 769) {
+		        panehHidden = true;
+		    }
+		    $('body').layout({ initClosed: panehHidden, west__size: 185 });
+		    queryRoleList();
+		    queryDeptTree();
+		});
+
+        function queryRoleList() {
+            var options = {
+                uniqueId: "id",
+                detailView: false,
+                url: "<%= sys_post_path(@conn, :list_data)%>",
+                createUrl: "<%= sys_post_path(@conn, :new)%>?deptId={id}",
+                updateUrl: '<%= sys_post_path(@conn, :edit,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                removeUrl: '<%= sys_post_path(@conn, :delete,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                exportUrl:  "/export",
+                sortName: "updated_at",
+		        sortOrder: "desc",
+                modalName: '<%= dgettext("sys_post","Post")%>',
+
+                columns: [{
+                    checkbox: true
+                },
+                {title: '<%= gettext("Sequence Number")%>',
+                        field: '',
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                         var options = $('#bootstrap-table').bootstrapTable('getOptions');
+                         return options.pageSize * (options.pageNumber - 1) + index + 1;
+                         }
+                    },
+                    
+                     {
+                       field: 'post_name',
+                       title: '<%= dgettext("sys_post","Post name")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'post_code',
+                       title: '<%= dgettext("sys_post","Post code")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'post_sort',
+                       title: '<%= dgettext("sys_post","Post sort")%>',
+                       sortable: true
+                     },
+                     {
+                       field: 'data_scope',
+                       title: '<%= dgettext("sys_post","Data scope")%>',
+                       sortable: true,
+                        formatter: function(value, item, index) {
+                        return $.table.selectDictLabel(<%=  raw get_dict_json("sys_data_scope")%>, item.data_scope);
+                         }
+                     },
+                      {
+                        field: 'status',
+                        title: '<%= gettext("Status")%>',
+                        sortable: true,
+                        formatter: function(value, item, index) {
+
+                         // return $.table.selectDictLabel(<%=  raw get_dict_json("sys_normal_disable")%>, item.status);
+                          return statusTools(item);
+                         }
+                      },
+                    {
+                       field: 'dept.dept_name',
+                       title: '<%= dgettext("sys_post","Dept name")%>',
+                       sortName: "dept_id",
+                       sortable: true
+                     },
+                      {
+                        field: 'inserted_by.user_name',
+                        title: '<%= gettext("Inserted by")%>',
+                        sortable: true,
+                        sortName: "inserted_by_id",
+                        visible: false,
+                        cardVisible:  true,
+                      },
+                      {
+                        field: 'inserted_at',
+                        title: '<%= gettext("Inserted at")%>',
+                        visible: false,
+                        cardVisible:  true,
+                        sortable: true
+                      },
+                      {
+                        field: 'updated_by.user_name',
+                        title: '<%= gettext("Updated by")%>',
+                        sortable: true,
+                        sortName: "updated_by_id",
+                        visible: false,
+                        cardVisible:  true,
+                      },
+                      {
+                        field: 'updated_at',
+                        title: '<%= gettext("Updated at")%>',
+                        visible: false,
+                        cardVisible:  true,
+                        sortable: true
+                      },
+                      {
+                        field: 'remark',
+                        title: '<%= gettext("Remark")%>',
+                        sortable: true,
+                        visible: false,
+                        cardVisible:  true,
+                       formatter: function(value, row, index) {
+                         return $.table.tooltip(value, 10, "open");
+                       }
+                      },
+                {
+                    title: '<%= gettext("Action")%>',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                         actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i><%= gettext("Update")%></a> ');
+                         actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i><%= gettext("Delete")%></a>');
+                         return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        }
+		function queryDeptTree()
+		{
+		   var url = '<%= sys_dept_path(@conn, :treeData)%>';
+			var options = {
+		        url: url,
+		        id: "tree",
+		        expandLevel: 2,
+		        onClick : zOnClick
+		    };
+			$.tree.init(options);
+
+			function zOnClick(event, treeId, treeNode) {
+				$("#deptId").val(treeNode.id);
+				$("#parentId").val(treeNode.pId);
+				$.table.search();
+			}
+		}
+
+		$('#btnExpand').click(function() {
+			$._tree.expandAll(true);
+		    $(this).hide();
+		    $('#btnCollapse').show();
+		});
+
+		$('#btnCollapse').click(function() {
+			$._tree.expandAll(false);
+		    $(this).hide();
+		    $('#btnExpand').show();
+		});
+
+		$('#btnRefresh').click(function() {
+			queryDeptTree();
+		});
+		 /* 部门 */
+         function dept() {
+        	 var url =  "<%=sys_dept_path(@conn, :index)%>";
+        	 $.modal.openTab("部门管理", url);
+         }
+
+		/* 状态显示 */
+		function statusTools(row) {
+		    if (row.status == 1) {
+    			return '<i class=\"fa fa-toggle-off text-info fa-2x\" onclick="enable(\'' + row.id + '\')"></i> ';
+    		} else {
+    			return '<i class=\"fa fa-toggle-on text-info fa-2x\" onclick="disable(\'' + row.id + '\')"></i> ';
+    		}
+		}
+
+		/* 用户管理-停用 */
+		function disable(id) {
+			//$.modal.confirm("确认要停用用户吗？", function() {
+				$.operate.get( "<%= sys_post_path(@conn, :update) %>?post[id]="+id+"&post[status]=1");
+		    //})
+		}
+
+		/* 用户管理启用 */
+		function enable(id) {
+			//$.modal.confirm("确认要启用用户吗？", function() {
+				$.operate.get("<%= sys_post_path(@conn, :update) %>?post[id]="+id+"&post[status]=0");
+		    //})
+		}
+        		function addnew() {
+                   if($.common.isEmpty($("#deptId").val())){
+                    $.modal.alertWarning("请选择一个部门");
+                    return false;
+                   }
+                    $.operate.add($("#deptId").val());
+        		}
+    </script>
+</body>
+</html>

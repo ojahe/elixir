@@ -1,0 +1,20 @@
+
+<%= render HelloWeb.SharedView, "upgrade.html",	assigns %>
+<link rel="stylesheet" href="${ctxStatic}/jquery-toastr/2.0/toastr.min.css?${_version}">
+<link rel="stylesheet" href="${ctxStatic}/modules/sys/sysIndex.css?${_version}">
+<header class="main-header">
+	<%= render HelloWeb.SharedView, "topMenu.html",	assigns %>
+</header>
+<aside class="main-sidebar">
+	<%= render HelloWeb.SharedView, "leftMenu.html",	assigns %>
+</aside>
+<div class="content-wrapper">
+	<div id="tabpanel"></div>
+</div>
+
+<div class="hide" id="desktopTabPage" data-title="${text('仪表盘')}"
+	data-url="${ctx}${@Global.getConfig('sys.index.desktopUrl')}"></div>
+<div class="hide" id="modifyPasswordTip" data-message="${modifyPasswordTip!}"></div>
+<script src="${ctxStatic}/jquery-toastr/2.0/toastr.min.js?${_version}"></script>
+<script src="${ctxStatic}/jquery-plugins/jquery.slimscroll.js"></script>
+<script src="${ctxStatic}/modules/sys/sysIndex.js?${_version}"></script>

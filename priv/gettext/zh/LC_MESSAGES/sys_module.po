@@ -1,0 +1,34 @@
+msgid "Module"
+msgstr "模块"
+
+msgid "Code"
+msgstr "模块编码"
+
+msgid "Name"
+msgstr "模块名称"
+
+msgid "Description"
+msgstr "模块说明"
+
+msgid "Main class name"
+msgstr "入口地址"
+
+msgid "Current version"
+msgstr "当前版本号"
+
+msgid "Upgrade info"
+msgstr "版本说明"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+
+msgid "Remark"
+msgstr "备注"
+
+

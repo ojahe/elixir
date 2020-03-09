@@ -1,0 +1,45 @@
+msgid "Menu"
+msgstr "菜单"
+
+msgid "Menu name"
+msgstr "菜单名"
+
+msgid "Parent"
+msgstr "上级菜单"
+
+msgid "Order num"
+msgstr "显示顺序"
+
+msgid "Url"
+msgstr "地址"
+
+msgid "Target"
+msgstr "打开方式"
+
+msgid "Menu type"
+msgstr "类型"
+
+msgid "Visible"
+msgstr "是否可见"
+
+msgid "Perms"
+msgstr "权限标志"
+
+msgid "Icon"
+msgstr "图标"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+
+msgid "Remark"
+msgstr "备注"
+msgid "Inserted at"
+msgstr "创建时间"
+
+

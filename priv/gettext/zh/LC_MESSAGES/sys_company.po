@@ -1,0 +1,31 @@
+msgid "Company"
+msgstr "公司"
+
+msgid "Parent"
+msgstr "上级公司"
+
+msgid "Ancestors"
+msgstr "上级公司id"
+
+msgid "Order num"
+msgstr "顺序"
+
+msgid "Code"
+msgstr "公司代码"
+
+msgid "Name"
+msgstr "公司名称"
+
+msgid "Short name"
+msgstr "简称"
+
+msgid "Area"
+msgstr "所属区域"
+
+msgid "Corp code"
+msgstr "租房代码"
+
+msgid "Corp name"
+msgstr "租房名称"
+
+

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pbkdf2" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/pbkdf2/lib" />
+    </SOURCES>
+  </library>
+</component>

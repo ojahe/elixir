@@ -1,0 +1,41 @@
+msgid "Dictdata"
+msgstr "字典数据"
+
+msgid "Dict label"
+msgstr "名称"
+
+msgid "Dict sort"
+msgstr "顺序"
+
+msgid "Dict value"
+msgstr "值"
+
+msgid "Dict type"
+msgstr "类型"
+
+msgid "Css class"
+msgstr "样式属性"
+
+msgid "List class"
+msgstr "回显样式"
+
+msgid "Is default"
+msgstr "默认选项"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+msgid "Inserted at"
+msgstr "创建时间"
+msgid "Updated at"
+msgstr "最后修改时间"
+
+msgid "Remark"
+msgstr "备注"
+
+

@@ -1,0 +1,107 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+              
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Config name") %>">
+								<span class="required ">*</span> <%= label f, :config_name,dgettext("sys_config","Config name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :config_name,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Config key") %>">
+								<span class="required ">*</span> <%= label f, :config_key,dgettext("sys_config","Config key") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :config_key,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Config value") %>">
+								<span class="required ">*</span> <%= label f, :config_value,dgettext("sys_config","Config value") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :config_value,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Config type") %>">
+								<span class="required ">*</span> <%= label f, :config_type,dgettext("sys_config","Config type") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :config_type,get_dict_list("sys_yes_no"),required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Status") %>">
+								<span class="required ">*</span> <%= label f, :status,dgettext("sys_config","Status") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_config","Remark") %>">
+								<span class="required "></span> <%= label f, :remark,dgettext("sys_config","Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="config_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#config_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+</script>
+</body>

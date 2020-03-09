@@ -1,0 +1,48 @@
+<h1>Show Config</h1>
+
+<ul>
+
+  <li>
+    <strong>Config name:</strong>
+    <%= @config.config_name %>
+  </li>
+
+  <li>
+    <strong>Config key:</strong>
+    <%= @config.config_key %>
+  </li>
+
+  <li>
+    <strong>Config value:</strong>
+    <%= @config.config_value %>
+  </li>
+
+  <li>
+    <strong>Config type:</strong>
+    <%= @config.config_type %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @config.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @config.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @config.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @config.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.config_path(@conn, :edit, @config) %></span>
+<span><%= link "Back", to: Routes.config_path(@conn, :index) %></span>

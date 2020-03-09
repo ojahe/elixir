@@ -1,0 +1,28 @@
+<h1>Show Area</h1>
+
+<ul>
+
+  <li>
+    <strong>Ancestors:</strong>
+    <%= @area.ancestors %>
+  </li>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @area.code %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @area.name %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @area.type %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.area_path(@conn, :edit, @area) %></span>
+<span><%= link "Back", to: Routes.area_path(@conn, :index) %></span>

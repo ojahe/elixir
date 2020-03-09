@@ -1,0 +1,130 @@
+
+<body class="gray-bg">
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+			<%= 	form_for @conn, sys_dicttype_path(@conn, :list_data), [method: :post,id: "searchForm" ], fn f -> %>
+
+					<div class="select-list">
+						<ul>
+							<li>
+
+							</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;<%= gettext("Search")%></a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;<%= gettext("Reset")%></a>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+
+	        <div class="btn-group-sm" id="toolbar" role="group">
+		        <a class="btn btn-success" onclick="$.operate.add()" >
+		            <i class="fa fa-plus"></i> <%= gettext("New")%>
+		        </a>
+		        <a class="btn btn-primary single disabled" onclick="$.operate.edit()" >
+		            <i class="fa fa-edit"></i> <%= gettext("Update")%>
+		        </a>
+		        <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" >
+		            <i class="fa fa-remove"></i> <%= gettext("Delete")%>
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()" >
+		            <i class="fa fa-download"></i> <%= gettext("Export")%>
+		        </a>
+	        </div>
+	        <div class="col-sm-12 select-table table-striped">
+	            <table id="bootstrap-table"></table>
+	        </div>
+	    </div>
+	</div>
+
+    <script>
+    var datas = <%=  raw get_dict_json("sys_normal_disable")%>;
+
+
+        $(function() {
+            var options = {
+                uniqueId: "id",
+                detailView: false,
+                url: "<%= sys_dicttype_path(@conn, :list_data)%>",
+                createUrl: "<%= sys_dicttype_path(@conn, :new)%>",
+                updateUrl: '<%= sys_dicttype_path(@conn, :edit,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                removeUrl: '<%= sys_dicttype_path(@conn, :delete,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                exportUrl:  "/export",
+                sortName: "updated_at",
+		        sortOrder: "desc",
+                modalName: '<%= dgettext("sys_dicttype","Dicttype")%>',
+
+                columns: [{
+                    checkbox: true
+                },
+                {title: '<%= gettext("Sequence Number")%>',
+                        field: '',
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                         var options = $('#bootstrap-table').bootstrapTable('getOptions');
+                         return options.pageSize * (options.pageNumber - 1) + index + 1;
+                         }
+                    },
+                    
+                     {
+                       field: 'dict_name',
+                       title: '<%= dgettext("sys_dicttype","Dict name")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'dict_type',
+                       title: '<%= dgettext("sys_dicttype","Dict type")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'status',
+                       title: '<%= dgettext("sys_dicttype","Status")%>',
+                       sortable: true,
+                       formatter: function(value, item, index) {
+                        return $.table.selectDictLabel(datas, item.status);
+                       }
+                     },
+                    
+                     {
+                       field: 'inserted_by.user_name',
+                       title: '<%= dgettext("sys_dicttype","Inserted by")%>',
+                       sortable: true,
+                       visible: false
+                     },
+                     {
+                       field: 'inserted_at',
+                       title: '<%= dgettext("sys_dictdata","Inserted at")%>',
+                       sortable: true,
+                       visible: false
+                     },
+                    
+                     {
+                       field: 'remark',
+                       title: '<%= dgettext("sys_dicttype","Remark")%>',
+                       sortable: true,
+                       visible: false
+                     },
+                    
+
+
+                {
+                    title: '<%= gettext("Action")%>',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                         actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i><%= gettext("Update")%></a> ');
+                         actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i><%= gettext("Delete")%></a>');
+                         return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+    </script>
+</body>
+</html>

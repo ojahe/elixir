@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="scrivener" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/scrivener/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/scrivener/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/scrivener/lib" />
+    </SOURCES>
+  </library>
+</component>

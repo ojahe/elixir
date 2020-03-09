@@ -1,0 +1,73 @@
+<h1>Show Menu</h1>
+
+<ul>
+
+  <li>
+    <strong>Menu name:</strong>
+    <%= @menu.menu_name %>
+  </li>
+
+  <li>
+    <strong>Parent:</strong>
+    <%= @menu.parent_id %>
+  </li>
+
+  <li>
+    <strong>Order num:</strong>
+    <%= @menu.order_num %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @menu.url %>
+  </li>
+
+  <li>
+    <strong>Target:</strong>
+    <%= @menu.target %>
+  </li>
+
+  <li>
+    <strong>Menu type:</strong>
+    <%= @menu.menu_type %>
+  </li>
+
+  <li>
+    <strong>Visible:</strong>
+    <%= @menu.visible %>
+  </li>
+
+  <li>
+    <strong>Perms:</strong>
+    <%= @menu.perms %>
+  </li>
+
+  <li>
+    <strong>Icon:</strong>
+    <%= @menu.icon %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @menu.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @menu.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @menu.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @menu.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.menu_path(@conn, :edit, @menu) %></span>
+<span><%= link "Back", to: Routes.menu_path(@conn, :index) %></span>

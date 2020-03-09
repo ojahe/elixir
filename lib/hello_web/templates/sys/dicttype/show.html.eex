@@ -1,0 +1,38 @@
+<h1>Show Dicttype</h1>
+
+<ul>
+
+  <li>
+    <strong>Dict name:</strong>
+    <%= @dicttype.dict_name %>
+  </li>
+
+  <li>
+    <strong>Dict type:</strong>
+    <%= @dicttype.dict_type %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @dicttype.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @dicttype.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @dicttype.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @dicttype.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.dicttype_path(@conn, :edit, @dicttype) %></span>
+<span><%= link "Back", to: Routes.dicttype_path(@conn, :index) %></span>

@@ -1,0 +1,169 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+            <!--
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Parent") %>">
+								<span class="required ">*</span> <%= label f, :parent_id,dgettext("sys_company","Parent") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= number_input f, :parent_id,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Name") %>">
+								<span class="required ">*</span> <%= label f, :name,dgettext("sys_company","Name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :name,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Short name") %>">
+								<span class="required ">*</span> <%= label f, :short_name,dgettext("sys_company","Short name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :short_name,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Code") %>">
+								<span class="required ">*</span> <%= label f, :code,dgettext("sys_company","Code") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :code,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Area") %>">
+								<span class="required ">*</span> <%= label f, :area_id,dgettext("sys_company","Area") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+
+                             <%= hidden_input f, :area_id,id: "treeId", value: f.data.area.id %>
+							 <input class="form-control" type="text" id="treeName" onclick="selectAreaTree()" readonly="true" value="<%=  f.data.area.name  %>">
+                            <!-- <span class="input-group-addon"><i class="fa fa-search"></i></span> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Order num") %>">
+								<span class="required "></span> <%= label f, :order_num,dgettext("sys_company","Order num") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= number_input f, :order_num,"required": false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Corp code") %>">
+								<span class="required "></span> <%= label f, :corp_code,dgettext("sys_company","Corp code") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :corp_code,"required": false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_company","Corp name") %>">
+								<span class="required "></span> <%= label f, :corp_name,dgettext("sys_company","Corp name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :corp_name,"required": false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+           
+                <div class="row">
+			       <div class="col-xs-12">
+					   <div class="form-group">
+						 <label class="control-label col-sm-3" title="<%= gettext("Status") %>">
+							 <span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
+					     <div class="col-sm-8">
+						     <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+					     </div>
+				       </div>
+			       </div>
+				</div>
+                <div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="company_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#company_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+ 		function selectAreaTree() {
+ 			var deptId = $("#treeId").val();
+ 			if($.common.isNotEmpty(deptId  )) {
+ 			    var options = {
+ 					title: '区域选择',
+ 					width: "380",
+ 					url: '<%= sys_area_path(@conn, :selectTree)%>?id='+$("#treeId").val(),
+ 					callBack: doSubmit
+ 				};
+ 				$.modal.openOptions(options);
+ 			} else {
+         		$.modal.alertError("顶级部门不用选择上级区域");
+         	}
+ 		}
+
+ 		function doSubmit(index, layero){
+ 			var tree = layero.find("iframe")[0].contentWindow.$._tree;
+ 			//if ($.tree.notAllowLastLevel(tree)) {
+ 	   			var body = layer.getChildFrame('body', index);
+ 	   			$("#treeId").val(body.find('#treeId').val());
+ 	   			$("#treeName").val(body.find('#treeName').val());
+ 	   			layer.close(index);
+ 			//}
+ 		}
+</script>
+</body>

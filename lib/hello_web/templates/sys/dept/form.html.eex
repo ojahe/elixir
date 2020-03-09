@@ -1,0 +1,152 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Parent") %>">
+								<span class="required ">*</span> <%= label f, :parent_id,dgettext("sys_dept","Parent") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+                             <%= hidden_input f, :parent_id,id: "treeId", value: @parent.id %>
+							 <input class="form-control" type="text" id="treeName" onclick="selectDeptTree()" readonly="true" value="<%=  @parent.dept_name  %>">
+                            <!-- <span class="input-group-addon"><i class="fa fa-search"></i></span> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Dept name") %>">
+								<span class="required ">*</span> <%= label f, :dept_name,dgettext("sys_dept","Dept name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :dept_name,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Order num") %>">
+								<span class="required "></span> <%= label f, :order_num,dgettext("sys_dept","Order num") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= number_input f, :order_num,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Leader") %>">
+								<span class="required ">*</span> <%= label f, :leader,dgettext("sys_dept","Leader") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :leader,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Phone") %>">
+								<span class="required ">*</span> <%= label f, :phone,dgettext("sys_dept","Phone") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :phone,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dept","Email") %>">
+								<span class="required "></span> <%= label f, :email,dgettext("sys_dept","Email") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :email,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Status") %>">
+								<span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :status,get_dict_list("sys_normal_disable") , required: false, class: "form-control"%>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="dept_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#dept_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+		/*部门管理-修改-选择部门树*/
+		function selectDeptTree() {
+			var deptId = $("#treeId").val();
+			if($.common.isNotEmpty(deptId  )) {
+			    var options = {
+					title: '部门选择',
+					width: "380",
+					url: '<%= sys_dept_path(@conn, :selectDeptTree)%>?id='+$("#treeId").val(),
+					callBack: doSubmit
+				};
+				$.modal.openOptions(options);
+			} else {
+        		$.modal.alertError("顶级部门不用选择父部门");
+        	}
+		}
+
+		function doSubmit(index, layero){
+			var tree = layero.find("iframe")[0].contentWindow.$._tree;
+			//if ($.tree.notAllowLastLevel(tree)) {
+	   			var body = layer.getChildFrame('body', index);
+	   			$("#treeId").val(body.find('#treeId').val());
+	   			$("#treeName").val(body.find('#treeName').val());
+	   			layer.close(index);
+			//}
+		}
+</script>
+</body>

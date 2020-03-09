@@ -1,0 +1,143 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+              
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Dict label") %>">
+								<span class="required ">*</span> <%= label f, :dict_label,dgettext("sys_dictdata","Dict label") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :dict_label,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Dict sort") %>">
+								<span class="required "></span> <%= label f, :dict_sort,dgettext("sys_dictdata","Dict sort") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= number_input f, :dict_sort,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Dict value") %>">
+								<span class="required ">*</span> <%= label f, :dict_value,dgettext("sys_dictdata","Dict value") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :dict_value,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Dict type") %>">
+								<span class="required ">*</span> <%= label f, :dict_type,dgettext("sys_dictdata","Dict type") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :dict_type,required: true, readonly: "true", class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Css class") %>">
+								<span class="required "></span> <%= label f, :css_class,dgettext("sys_dictdata","Css class") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :css_class,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","List class") %>">
+								<span class="required "></span> <%= label f, :list_class,dgettext("sys_dictdata","List class") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :list_class,get_dict_list("sys_list_css") ,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Is default") %>">
+								<span class="required ">*</span> <%= label f, :is_default,dgettext("sys_dictdata","Is default") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :is_default,get_dict_list("sys_yes_no") ,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_dictdata","Status") %>">
+								<span class="required ">*</span> <%= label f, :status,dgettext("sys_dictdata","Status") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+           
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="dictdata_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#dictdata_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+</script>
+</body>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<%= render HelloWeb.IncludeView, "head.html", assigns %>
+<%= render HelloWeb.ThemesView, "header.html" , assigns%>
+<link rel="stylesheet" href="<%= static_path(@conn,"/css/app.css") %>">
+<script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+<%= render HelloWeb.ThemesView, "footer.html",assigns %>
+
+</head>
+<body class="hold-transition  skin-blue layout-top-nav">
+
+<div class="wrapper">
+ <div class="content-wrapper">
+  <%= render @view_module, @view_template, assigns %>
+ </div>
+</div>
+
+<a id="scroll-up" href="#" class="btn btn-sm"><i class="fa fa-angle-double-up"></i></a>
+
+
+</body>
+</html>

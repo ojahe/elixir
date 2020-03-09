@@ -1,0 +1,113 @@
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+              
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_area","Parent Area") %>">
+								<span class="required ">*</span> <%= label f, :ancestors,dgettext("sys_area","Parent Area") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+
+							 <%= hidden_input f, :parent_id,id: "treeId", value: f.data.parent.id %>
+                             <input class="form-control" type="text" id="treeName" onclick="selectAreaTree()" readonly="true" value="<%=  f.data.parent.name  %>">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_area","Name") %>">
+								<span class="required ">*</span> <%= label f, :name,dgettext("sys_area","Name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :name,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= dgettext("sys_area","Code") %>">
+								<span class="required ">*</span> <%= label f, :code,dgettext("sys_area","Code") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :code,"required": true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="row">
+			       <div class="col-xs-12">
+					   <div class="form-group">
+						 <label class="control-label col-sm-3" title="<%= gettext("Status") %>">
+							 <span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
+					     <div class="col-sm-8">
+						     <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+					     </div>
+				       </div>
+			       </div>
+				</div>
+
+                <div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+		<% end %>
+	</div>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.save(
+	                "<%= @action %>",
+	                $('#inputForm').serialize(),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="area_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#area_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+ 		/*选择部门树*/
+ 		function selectAreaTree() {
+ 			var deptId = $("#treeId").val();
+ 			if($.common.isNotEmpty(deptId  )) {
+ 			    var options = {
+ 					title: '区域选择',
+ 					width: "380",
+ 					url: '<%= sys_area_path(@conn, :selectTree)%>?id='+$("#treeId").val(),
+ 					callBack: doSubmit
+ 				};
+ 				$.modal.openOptions(options);
+ 			} else {
+         		$.modal.alertError("顶级部门不用选择上级区域");
+         	}
+ 		}
+
+ 		function doSubmit(index, layero){
+ 			var tree = layero.find("iframe")[0].contentWindow.$._tree;
+ 			//if ($.tree.notAllowLastLevel(tree)) {
+ 	   			var body = layer.getChildFrame('body', index);
+ 	   			$("#treeId").val(body.find('#treeId').val());
+ 	   			$("#treeName").val(body.find('#treeName').val());
+ 	   			layer.close(index);
+ 			//}
+ 		}
+</script>
+</body>

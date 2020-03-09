@@ -1,0 +1,26 @@
+msgid "Dept"
+msgstr "部门"
+
+msgid "Dept name"
+msgstr "部门名称"
+
+msgid "Parent"
+msgstr "上级部门"
+
+msgid "Order num"
+msgstr "显示顺序"
+
+msgid "Ancestors"
+msgstr "层级"
+
+msgid "Leader"
+msgstr "负责人"
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Email"
+msgstr "邮箱"
+
+
+

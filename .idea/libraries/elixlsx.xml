@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="elixlsx" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/elixlsx/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/elixlsx/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/elixlsx/lib" />
+    </SOURCES>
+  </library>
+</component>

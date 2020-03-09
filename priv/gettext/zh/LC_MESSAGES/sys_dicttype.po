@@ -1,0 +1,27 @@
+msgid "Dicttype"
+msgstr "字典类型"
+
+msgid "Dict name"
+msgstr "类型名称"
+
+msgid "Dict type"
+msgstr "类型"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+
+msgid "Remark"
+msgstr "备注"
+
+msgid "Inserted at"
+msgstr "创建时间"
+msgid "Updated at"
+msgstr "最后修改时间"
+
+

@@ -1,0 +1,63 @@
+<h1>Show Dictdata</h1>
+
+<ul>
+
+  <li>
+    <strong>Dict label:</strong>
+    <%= @dictdata.dict_label %>
+  </li>
+
+  <li>
+    <strong>Dict sort:</strong>
+    <%= @dictdata.dict_sort %>
+  </li>
+
+  <li>
+    <strong>Dict value:</strong>
+    <%= @dictdata.dict_value %>
+  </li>
+
+  <li>
+    <strong>Dict type:</strong>
+    <%= @dictdata.dict_type %>
+  </li>
+
+  <li>
+    <strong>Css class:</strong>
+    <%= @dictdata.css_class %>
+  </li>
+
+  <li>
+    <strong>List class:</strong>
+    <%= @dictdata.list_class %>
+  </li>
+
+  <li>
+    <strong>Is default:</strong>
+    <%= @dictdata.is_default %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @dictdata.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @dictdata.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @dictdata.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @dictdata.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.dictdata_path(@conn, :edit, @dictdata) %></span>
+<span><%= link "Back", to: Routes.dictdata_path(@conn, :index) %></span>

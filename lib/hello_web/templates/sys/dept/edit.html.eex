@@ -1,0 +1,4 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+<%= render "form.html", Map.put(assigns, :action, sys_dept_path(@conn, :update)) %>
+</section>

@@ -1,0 +1,189 @@
+
+<body class="gray-bg">
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+			<%= 	form_for @conn, sys_role_path(@conn, :list_data), [method: :post,id: "searchForm" ], fn f -> %>
+
+					<div class="select-list">
+						<ul>
+							<li>
+                            <%= dgettext("sys_role","Role name")%>：<%= text_input f, :role_name %>
+							</li>
+							<li>
+								 <%= gettext("Status")%>：<%= select f, :status,get_dict_list("sys_normal_disable")  %>
+							</li>
+							<li class="select-time">
+								<label><%= gettext("Inserted at")%>： </label>
+								<input type="text" class="time-input" id="startTime" name="beginTime"/>
+								<span>-</span>
+								<input type="text" class="time-input" id="endTime"  name="endTime"/>
+							</li>
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;<%= gettext("Search")%></a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;<%= gettext("Reset")%></a>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+
+	        <div class="btn-group-sm" id="toolbar" role="group">
+		        <a class="btn btn-success" onclick="$.operate.add()" >
+		            <i class="fa fa-plus"></i> <%= gettext("New")%>
+		        </a>
+		        <a class="btn btn-primary single disabled" onclick="$.operate.edit()" >
+		            <i class="fa fa-edit"></i> <%= gettext("Update")%>
+		        </a>
+		        <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" >
+		            <i class="fa fa-remove"></i> <%= gettext("Delete")%>
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()" >
+		            <i class="fa fa-download"></i> <%= gettext("Export")%>
+		        </a>
+	        </div>
+	        <div class="col-sm-12 select-table table-striped">
+	            <table id="bootstrap-table"></table>
+	        </div>
+	    </div>
+	</div>
+
+    <script>
+
+
+
+        $(function() {
+            var options = {
+                uniqueId: "id",
+                detailView: false,
+                url: "<%= sys_role_path(@conn, :list_data)%>",
+                createUrl: "<%= sys_role_path(@conn, :new)%>",
+                updateUrl: '<%= sys_role_path(@conn, :edit,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                removeUrl: '<%= sys_role_path(@conn, :delete,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                exportUrl:  "/export",
+                sortName: "role_sort",
+		        sortOrder: "asc",
+                modalName: '<%= dgettext("sys_role","Role")%>',
+
+                columns: [
+                        {
+                           checkbox: true
+                        },
+                       {
+                       title: '<%= gettext("Sequence Number")%>',
+                        field: '',
+                        align: 'center',
+                        formatter: function (value, row, index) {
+                         var options = $('#bootstrap-table').bootstrapTable('getOptions');
+                         return options.pageSize * (options.pageNumber - 1) + index + 1;
+                         }
+                    },
+                    
+                     {
+                       field: 'role_name',
+                       title: '<%= dgettext("sys_role","Role name")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'role_code',
+                       title: '<%= dgettext("sys_role","Role code")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'role_sort',
+                       title: '<%= dgettext("sys_role","Role sort")%>',
+                       sortable: true
+                     },
+                    
+                     {
+                       field: 'status',
+                       title: '<%= gettext("Status")%>',
+                       sortable: true,
+                       formatter: function(value, item, index) {
+                        // return $.table.selectDictLabel(<%=  raw get_dict_json("sys_normal_disable")%>, item.status);
+                         return statusTools(item);
+                        }
+                     },
+                     {
+                       field: 'inserted_by.user_name',
+                       title: '<%= gettext("Inserted by")%>',
+                       sortable: true,
+                       sortName: "inserted_by_id",
+                       visible: false,
+                       cardVisible:  true,
+                     },
+                     {
+                       field: 'inserted_at',
+                       title: '<%= gettext("Inserted at")%>',
+                       visible: false,
+                       cardVisible:  true,
+                       sortable: true
+                     },
+                     {
+                       field: 'updated_by.user_name',
+                       title: '<%= gettext("Updated by")%>',
+                       sortable: true,
+                       sortName: "updated_by_id",
+                       visible: false,
+                       cardVisible:  true,
+                     },
+                     {
+                       field: 'updated_at',
+                       title: '<%= gettext("Updated at")%>',
+                       visible: false,
+                       cardVisible:  true,
+                       sortable: true
+                     },
+                     {
+                       field: 'remark',
+                       title: '<%= gettext("Remark")%>',
+                       sortable: true,
+                       visible: false,
+                       cardVisible:  true,
+                      formatter: function(value, row, index) {
+                        return $.table.tooltip(value, 10, "open");
+                      }
+                     },
+
+
+                {
+                    title: '<%= gettext("Action")%>',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                         actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i><%= gettext("Update")%></a> ');
+                         actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i><%= gettext("Delete")%></a>');
+                         return actions.join('');
+                    }
+                }]
+            };
+            $.table.init(options);
+        });
+
+		/* 状态显示 */
+		function statusTools(row) {
+		    if (row.status == 1) {
+    			return '<i class=\"fa fa-toggle-off text-info fa-2x\" onclick="enable(\'' + row.id + '\')"></i> ';
+    		} else {
+    			return '<i class=\"fa fa-toggle-on text-info fa-2x\" onclick="disable(\'' + row.id + '\')"></i> ';
+    		}
+		}
+
+		/* 状态停用 */
+		function disable(id) {
+			//$.modal.confirm("确认要停用吗？", function() {
+				$.operate.get( "<%= sys_role_path(@conn, :update)%>?role[id]="+id+"&role[status]=1");
+		    //})
+		}
+
+		/* 状态启用 */
+		function enable(id) {
+			//$.modal.confirm("确认要启用吗？", function() {
+				$.operate.get( "<%= sys_role_path(@conn, :update)%>?role[id]="+id+"&role[status]=0");
+		    //})
+		}
+    </script>
+</body>
+</html>

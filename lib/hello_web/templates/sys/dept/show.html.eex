@@ -1,0 +1,63 @@
+<h1>Show Dept</h1>
+
+<ul>
+
+  <li>
+    <strong>Dept name:</strong>
+    <%= @dept.dept_name %>
+  </li>
+
+  <li>
+    <strong>Parent:</strong>
+    <%= @dept.parent_id %>
+  </li>
+
+  <li>
+    <strong>Order num:</strong>
+    <%= @dept.order_num %>
+  </li>
+
+  <li>
+    <strong>Ancestors:</strong>
+    <%= @dept.ancestors %>
+  </li>
+
+  <li>
+    <strong>Leader:</strong>
+    <%= @dept.leader %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @dept.phone %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @dept.email %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @dept.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @dept.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @dept.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @dept.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.dept_path(@conn, :edit, @dept) %></span>
+<span><%= link "Back", to: Routes.dept_path(@conn, :index) %></span>

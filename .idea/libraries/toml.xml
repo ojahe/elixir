@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="toml" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/toml/lib" />
+    </SOURCES>
+  </library>
+</component>

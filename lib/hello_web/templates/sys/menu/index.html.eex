@@ -1,0 +1,195 @@
+
+<body class="gray-bg">
+     <div class="container-div">
+		<div class="row">
+			<div class="col-sm-12 search-collapse">
+			<%= 	form_for @conn, sys_menu_path(@conn, :list_data), [method: :post,id: "searchForm" ], fn f -> %>
+
+					<div class="select-list">
+						<ul>
+							<li>
+                            <%= dgettext("sys_menu","Menu name")%>：<%= text_input f, :menu_name %>
+							</li>
+							<li>
+								 <%= gettext("Status")%>：<%= select f, :status,get_dict_list("sys_normal_disable")  %>
+							</li>
+							<li class="select-time">
+								<label><%= gettext("Inserted at")%>： </label>
+								<input type="text" class="time-input" id="startTime" name="beginTime"/>
+								<span>-</span>
+								<input type="text" class="time-input" id="endTime"  name="endTime"/>
+							</li>
+
+							<li>
+								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.treeTable.search()"><i class="fa fa-search"></i>&nbsp;<%= gettext("Search")%></a>
+								<a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;<%= gettext("Reset")%></a>
+							</li>
+						</ul>
+					</div>
+				<% end %>
+			</div>
+
+	        <div class="btn-group-sm" id="toolbar" role="group">
+	            <a class="btn btn-info" id="expandAllBtn">
+                  <i class="fa fa-exchange"></i> 展开/折叠
+                </a>
+		        <a class="btn btn-success" onclick="$.operate.add()" >
+		            <i class="fa fa-plus"></i> <%= gettext("New")%>
+		        </a>
+		        <a class="btn btn-primary single " onclick="$.operate.edit()" >
+		            <i class="fa fa-edit"></i> <%= gettext("Update")%>
+		        </a>
+		        <a class="btn btn-danger multiple " onclick="$.operate.removeAll()" >
+		            <i class="fa fa-remove"></i> <%= gettext("Delete")%>
+		        </a>
+		        <a class="btn btn-warning" onclick="$.table.exportExcel()" >
+		            <i class="fa fa-download"></i> <%= gettext("Export")%>
+		        </a>
+	        </div>
+	        <div class="col-sm-12 select-table table-striped">
+	            <table id="bootstrap-tree-table"></table>
+	        </div>
+	    </div>
+	</div>
+
+    <script>
+    //var datas = <%=  raw get_dict_json("sys_normal_disable")%>;
+   $(function() {
+            var options = {
+                uniqueId: "id",
+                 code: "id",
+                parentCode: "parent_id",
+                ajaxParams: $.common.formToJSON("searchForm"),
+                 formId: "searchForm",
+                detailView: false,
+                url: "<%= sys_menu_path(@conn, :list_data)%>",
+                createUrl: "<%= sys_menu_path(@conn, :new)%>",
+                updateUrl: '<%= sys_menu_path(@conn, :edit,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                removeUrl: '<%= sys_menu_path(@conn, :delete,"{id}")%>'.replace(RegExp('%7Bid%7D', 'g'), "{id}"),
+                exportUrl:  "/export",
+                sortName: "order_num",
+		        sortOrder: "asc",
+                modalName: '<%= dgettext("sys_menu","Menu")%>',
+
+                columns: [
+                { field: 'selectItem',
+                  radio: true
+                  },
+                   {  field: 'menu_name',
+                       title: '<%= dgettext("sys_menu","Menu name")%>',
+                       sortable: true,
+ 		            width: '20%',
+ 		            formatter: function(value, row, index) {
+ 		                if ($.common.isEmpty(row.icon)) {
+ 		                    return row.menu_name;
+ 		                } else {
+ 		                    return '<i class="' + row.icon + '"></i> <span class="nav-label">' + row.menu_name + '</span>';
+ 		                }
+ 		            }
+                     },
+                    
+                     {
+                       field: 'order_num',
+                       title: '<%= dgettext("sys_menu","Order num")%>',
+                       visible: false,
+                       sortable: false
+                     },
+                    
+                     {
+                       field: 'url',
+                       title: '<%= dgettext("sys_menu","Url")%>',
+                       sortable: false,
+                       visible: true
+                     },
+                    
+                     {
+                       field: 'target',
+                       title: '<%= dgettext("sys_menu","Target")%>',
+                       sortable: false,
+                       visible: false
+                     },
+                    
+                     {
+                       field: 'menu_type',
+                       title: '<%= dgettext("sys_menu","Menu type")%>',
+                       sortable: true,
+                       formatter: function(value, item, index) {
+                       		    if (item.menu_type == 'M') {
+                       		        return '<span class="label label-success">目录</span>';
+                       		         }
+                       		    else if (item.menu_type == 'C') {
+                       		         return '<span class="label label-primary">菜单</span>';
+                       		          }
+                       		    else if (item.menu_type == 'F') {
+                       		          return '<span class="label label-warning">按钮</span>';
+                       		           }
+                       		      }
+                     },
+                    
+                     {
+                       field: 'visible',
+                       title: '<%= dgettext("sys_menu","Visible")%>',
+                       sortable: true,
+  		               formatter: function(value, row, index) {
+  		            	if (row.menuType == 'F') {
+  		                    return '-';
+  		                }
+  		            	return $.table.selectDictLabel(<%=  raw get_dict_json("sys_show_hide")%>, row.visible);
+  		            }
+                     },
+                    
+                     {
+                       field: 'perms',
+                       title: '<%= dgettext("sys_menu","Perms")%>',
+                       sortable: false,
+                       visible: false
+                     },
+                     {
+                       field: 'status',
+                       title: '<%= dgettext("sys_menu","Status")%>',
+                       sortable: true,
+                       formatter: function(value, item, index) {
+                               return $.table.selectDictLabel(<%=  raw get_dict_json("sys_normal_disable")%>, item.status);
+                       }
+                     },
+                    
+                     {
+                       field: 'inserted_by.user_name',
+                       title: '<%= dgettext("sys_menu","Inserted by")%>',
+                       sortable: false,
+                       visible: false
+                     },
+                    
+                     {
+                       field: 'inserted_at',
+                       title: '<%= dgettext("sys_menu","Inserted at")%>',
+                       sortable: false,
+                       visible: false
+                     },
+                    
+                     {
+                       field: 'remark',
+                       title: '<%= dgettext("sys_menu","Remark")%>',
+                       sortable: true,
+                       sortable: false,
+                       visible: false
+                     },
+                    
+
+
+                {
+                    title: '<%= gettext("Action")%>',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                         actions.push('<a class="btn btn-success btn-xs" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i><%= gettext("Update")%></a> ');
+                         actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i><%= gettext("Delete")%></a>');
+                         return actions.join('');
+                    }
+                }]
+            };
+            $.treeTable.init(options);
+        });
+    </script>
+</body>
+</html>

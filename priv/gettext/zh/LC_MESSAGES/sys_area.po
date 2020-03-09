@@ -1,0 +1,16 @@
+msgid "Area"
+msgstr "区域"
+
+msgid "Parent Area"
+msgstr "上级区域"
+
+msgid "Code"
+msgstr "编码"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "Type"
+msgstr "级别"
+
+

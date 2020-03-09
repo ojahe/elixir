@@ -1,0 +1,58 @@
+<h1>Show Module</h1>
+
+<ul>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @module.code %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @module.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @module.description %>
+  </li>
+
+  <li>
+    <strong>Main class name:</strong>
+    <%= @module.main_class_name %>
+  </li>
+
+  <li>
+    <strong>Current version:</strong>
+    <%= @module.current_version %>
+  </li>
+
+  <li>
+    <strong>Upgrade info:</strong>
+    <%= @module.upgrade_info %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @module.status %>
+  </li>
+
+  <li>
+    <strong>Inserted by:</strong>
+    <%= @module.inserted_by %>
+  </li>
+
+  <li>
+    <strong>Updated by:</strong>
+    <%= @module.updated_by %>
+  </li>
+
+  <li>
+    <strong>Remark:</strong>
+    <%= @module.remark %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.module_path(@conn, :edit, @module) %></span>
+<span><%= link "Back", to: Routes.module_path(@conn, :index) %></span>

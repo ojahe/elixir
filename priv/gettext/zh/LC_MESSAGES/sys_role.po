@@ -1,0 +1,13 @@
+msgid "Role"
+msgstr "角色"
+
+msgid "Role name"
+msgstr "角色名称"
+
+msgid "Role code"
+msgstr "角色编码"
+
+msgid "Role sort"
+msgstr "顺序"
+
+

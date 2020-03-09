@@ -1,0 +1,272 @@
+<link href="<%= static_path(@conn, "/ajax/libs/bootstrap-fileinput/fileinput.min.css") %>" rel="stylesheet"/>
+<link href="<%= static_path(@conn, "/ajax/libs/select2/select2.min.css") %>" rel="stylesheet"/>
+<link href="<%= static_path(@conn, "/ajax/libs/select2/select2-bootstrap.css") %>" rel="stylesheet"/>
+ <link href="<%= static_path(@conn, "/ajax/libs/bootstrap-select/bootstrap-select.css") %>" rel="stylesheet"/>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+         <%= form_for @changeset, @action,[method: :post,multipart: true,class: :"form-horizontal", id: "inputForm"], fn f -> %>
+         <%= hidden_input f, :id %>
+            <h4 class="form-header h4">基本信息</h4>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Dept name") %>">
+								<span class="required ">*</span> <%= label f, :dept_id,dgettext("sys_user","Dept name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+                             <%= hidden_input f, :dept_id,id: "treeId", value: @dept.id %>
+							 <input class="form-control" type="text" id="treeName" onclick="selectDeptTree()" readonly="true" value="<%=  @dept.dept_name  %>">
+                            <!-- <span class="input-group-addon"><i class="fa fa-search"></i></span> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","User name") %>">
+								<span class="required ">*</span> <%= label f, :user_name,dgettext("sys_user","User name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :user_name,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+              
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","User code") %>">
+								<span class="required ">*</span> <%= label f, :user_code,dgettext("sys_user","User code") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :user_code,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Login name") %>">
+								<span class="required">*</span> <%= label f, :login_name,dgettext("sys_user","Login name") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :login_name,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                      
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Password") %>">
+								<span class="required "></span> <%= label f, :password,dgettext("sys_user","Password") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= password_input f, :password,required: false, class: "form-control",placeholder: "不修改密码请留空" %>
+							</div>
+						</div>
+					</div>
+
+				<!--
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","User type") %>">
+								<span class="required "></span> <%= label f, :user_type,dgettext("sys_user","User type") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :user_type,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+                 -->
+
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Title") %>">
+								<span class="required "></span> <%= label f, :title,dgettext("sys_user","Title") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :title,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Phone") %>">
+								<span class="required ">*</span> <%= label f, :phone,dgettext("sys_user","Phone") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :phone,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Email") %>">
+								<span class="required "></span> <%= label f, :email,dgettext("sys_user","Email") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= text_input f, :email,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= dgettext("sys_user","Sex") %>">
+								<span class="required "></span> <%= label f, :sex,dgettext("sys_user","Sex") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :sex,get_dict_list("sys_user_sex"),required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label class="control-label col-sm-4" title="<%= gettext("Status") %>">
+								<span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-8">
+							 <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+
+				</div>
+	<div class="row">
+       <%= inputs_for f, :account, fn cf -> %>
+
+        	<div class="col-xs-6">
+        		 <div class="form-group">
+        			 <label class="control-label col-sm-4" title="<%= dgettext("sys_user","Password") %>">
+        					 <span class="required ">*</span> <%= label cf, :password,dgettext("sys_user","Password") %>:<i class="fa icon-question hide"></i></label>
+        						 <div class="col-sm-8">
+                                  <%= if @changeset.data.id  do %>
+        							 <%= password_input cf, :password , placeholder: "若不修改密码请保留为空", class: "form-control" %>
+                                  <% else %>
+                                     <%= password_input cf, :password ,placeholder: "登录密码",required: true, class: "form-control" %>
+                                  <% end %>
+        						 </div>
+        		 </div>
+        	</div>
+         <% end %>
+  </div>
+            <h4 class="form-header h4">其他信息</h4>
+                <div class="row">
+   					<div class="col-xs-12">
+   						<div class="form-group">
+   							<label class="control-label col-sm-2" title="<%= dgettext("sys_user","roles") %>">
+   								<span class="required "></span> <%= label f, :remark,dgettext("sys_user","roles") %>:<i class="fa icon-question hide"></i></label>
+   							<div class="col-sm-10">
+   						    <%= multiple_select f, :roles,Enum.map(@allRoles, &{&1.role_name, &1.id}),required: false,selected: Enum.map(f.data.roles, &(&1.id)), class: "form-control  select2-multiple" %>
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+                <div class="row">
+   					<div class="col-xs-12">
+   						<div class="form-group">
+   							<label class="control-label col-sm-2" title="<%= dgettext("sys_user","posts") %>">
+   								<span class="required "></span> <%= label f, :remark,dgettext("sys_user","posts") %>:
+   								   <i class="fa icon-question hide"></i>
+   							</label>
+   							<div class="col-sm-10">
+   						    <%= multiple_select f, :posts,Enum.map(@allPosts, &{&1.post_name, &1.id}),required: false,selected: Enum.map(f.data.posts, &(&1.id)), class: "form-control  select2-multiple" %>
+   							</div>
+   						</div>
+   					</div>
+   				</div>
+                <div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-2" title="<%= dgettext("sys_user","Remark") %>">
+								<span class="required "></span> <%= label f, :remark,dgettext("sys_user","Remark") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-10">
+							 <%= textarea f, :remark,required: false, class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label class="control-label col-sm-2" title="<%= dgettext("sys_user","Avatar") %>">
+								<span class="required "></span> <%= label f, :avatar,dgettext("sys_user","Avatar") %>:<i class="fa icon-question hide"></i></label>
+							<div class="col-sm-10">
+							<script>
+                         var avatar="/media/<%= f.data.avatar %>";
+                        </script>
+							  <%= file_input f, :avatar,required: false,id: "user_avatar" %>
+							</div>
+						</div>
+					</div>
+                </div>
+
+		<% end %>
+	</div>
+<script src="<%= static_path(@conn, "/ajax/libs/bootstrap-fileinput/fileinput.min.js") %>"></script>
+<script src="<%= static_path(@conn, "/ajax/libs/select2/select2.min.js") %>"></script>
+<script src="<%= static_path(@conn, "/ajax/libs/bootstrap-select/bootstrap-select.js") %>"></script>
+
+<script>
+ function submitHandler() {
+	        if ($.validate.form()) {
+	            $.operate.saveupload(
+	                "<%= @action %>",
+	                new FormData($("#inputForm")[0]),
+	                function(result){
+                		if(result.code != web_status.SUCCESS){
+                			  result.errors.forEach(error =>{
+                              var p = $('<label id="user_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
+                             	$('#user_'+error.propName).after(p);
+                             	})
+                        }
+                    }
+	        )
+	    }
+ }
+
+ 		/*部门管理-修改-选择部门树*/
+ 		function selectDeptTree() {
+ 			var deptId = $("#treeId").val();
+ 			if(deptId > 0) {
+ 			    var options = {
+ 					title: '部门选择',
+ 					width: "380",
+ 					url: '<%= sys_dept_path(@conn, :selectDeptTree)%>?id='+$("#treeId").val(),
+ 					callBack: doSubmit
+ 				};
+ 				$.modal.openOptions(options);
+ 			} else {
+         		$.modal.alertError("父部门不能选择");
+         	}
+ 		}
+
+ 		function doSubmit(index, layero){
+ 			var tree = layero.find("iframe")[0].contentWindow.$._tree;
+ 			if ($.tree.notAllowLastLevel(tree)) {
+ 	   			var body = layer.getChildFrame('body', index);
+ 	   			$("#treeId").val(body.find('#treeId').val());
+ 	   			$("#treeName").val(body.find('#treeName').val());
+ 	   			layer.close(index);
+ 			}
+ 		}
+</script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $("#user_avatar").fileinput({
+              'theme': 'explorer-fas',
+              'uploadUrl': '#',
+             // 'deleteUrl': '#',
+             allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
+             uploadAsync: false,
+             showUpload: false,
+              overwriteInitial: true,
+              initialPreviewAsData: true,
+              initialPreview: [
+                 avatar
+              ]
+          });
+      });
+    </script>
+</body>

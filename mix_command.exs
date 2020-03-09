@@ -1,0 +1,11 @@
+mix phx.gen.html Sys Config  configs config_name:string config_key:string config_value:string config_type:string status:integer inserted_by:string updated_by:string  remark:string --table sys_config
+mix phx.gen.html Sys Dicttype  dicttypes dict_name:string dict_type:string  status:integer inserted_by:string updated_by:string  remark:string --table sys_dict_type
+mix phx.gen.html Sys Dictdata  dictdatas dict_label:string dict_sort:integer  dict_value:string dict_type:string css_class:string list_class:string is_default:string status:integer inserted_by:string updated_by:string  remark:string --table sys_dict_data
+mix phx.gen.html Sys Module  modules code:string name:string  description:string main_class_name:string current_version:string upgrade_info:string  status:integer inserted_by:string updated_by:string  remark:string --table sys_module
+mix phx.gen.html Sys Menu  menus  menu_name:string  parent_id:string order_num:integer url:string target:string menu_type:string visible:string perms:string icon:string  status:integer inserted_by:string updated_by:string  remark:string --table sys_menu
+mix phx.gen.html Sys Dept  depts  dept_name:string  parent_id:string order_num:integer ancestors:string  leader:string phone:string email:string  status:integer inserted_by:string updated_by:string  remark:string --table sys_menu
+mix phx.gen.html Sys Post  posts  post_name:string  post_code:string  post_sort:integer data_scope:string status:integer inserted_by:string updated_by:string  remark:string --table sys_post
+mix phx.gen.html Sys User  users user_code:string   user_name:string  login_name:string  user_type:string title:string   email:string   phone:string  sex:string  avatar:string  password:string  salt:string  login_ip:string  login_date:utc_datetime  status:integer inserted_by:string updated_by:string  remark:string --table sys_user
+mix phx.gen.html Sys Role roles role_name:string role_code:string role_sort:integer --table sys_role
+mix phx.gen.html Sys Area areas ancestors:string code:string name:string type:integer --table sys_area
+mix phx.gen.html Sys Company companys parent_id:integer ancestors:string order_num:integer code:string name:string short_name:string area_id:integer corp_code:string corp_name:string --table sys_company

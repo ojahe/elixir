@@ -1,0 +1,28 @@
+msgid "Config"
+msgstr "系统配置"
+
+msgid "Config name"
+msgstr "参数名称"
+
+msgid "Config key"
+msgstr "参数键名"
+
+msgid "Config value"
+msgstr "参数值"
+
+msgid "Config type"
+msgstr "系统内置"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Inserted by"
+msgstr "创建人"
+
+msgid "Updated by"
+msgstr "修改人"
+
+msgid "Remark"
+msgstr "备注"
+
+
