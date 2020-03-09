@@ -1,4 +1,10 @@
 # Hello
+基于
+Elixir
+ Phoenix
+ Ecto
+ jQuery
+ Bootstrap 等技术的权限管理系统
 
 To start your Phoenix server:
 
