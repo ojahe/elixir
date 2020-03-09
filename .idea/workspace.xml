@@ -13,6 +13,8 @@
       <change afterPath="$PROJECT_DIR$/deps/pbkdf2/comeonin/mix.exs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/deps/pbkdf2/comeonin/priv/plts/dialyzer.plt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/deps/pbkdf2/comeonin/priv/plts/dialyzer.plt.hash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/deps/pbkdf2" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="JsFlowSettings">
@@ -468,6 +471,8 @@
       <workItem from="1583639440525" duration="1324000" />
       <workItem from="1583731611307" duration="3531000" />
       <workItem from="1583756505780" duration="593000" />
+      <workItem from="1583761287703" duration="1683000" />
+      <workItem from="1583766519400" duration="400000" />
     </task>
     <servers />
   </component>
@@ -496,6 +501,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="49" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582430574582" />
+    <state x="392" y="81" key="MultipleFileMergeDialog" timestamp="1583766731218">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="392" y="81" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1583766731218" />
     <state x="323" y="68" key="NewModule_or_Project.wizard" timestamp="1582430598977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -504,10 +513,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582076392069" />
-    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581819389740">
+    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583766587076">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1581819389740" />
+    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1583766587076" />
     <state x="370" y="119" width="759" height="548" key="find.popup" timestamp="1583731697708">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
