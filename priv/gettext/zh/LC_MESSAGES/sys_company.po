@@ -23,9 +23,9 @@ msgid "Area"
 msgstr "所属区域"
 
 msgid "Corp code"
-msgstr "租房代码"
+msgstr "租户代码"
 
 msgid "Corp name"
-msgstr "租房名称"
+msgstr "租户名称"
 
 

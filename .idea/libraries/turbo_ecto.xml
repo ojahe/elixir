@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="turbo_ecto" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/turbo_ecto/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/turbo_ecto/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/turbo_ecto/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

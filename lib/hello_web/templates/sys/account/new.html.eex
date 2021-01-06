@@ -29,7 +29,7 @@
                         <h1><img alt="[ 圣河 ]" src="<%= static_path(@conn, "/img/logo.png") %>"></h1>
                     </div>
                     <div class="m-b"></div>
-                    <h4>欢迎使用 <strong>圣河后台管理系统</strong></h4>
+                    <h4>欢迎使用 <strong>后台管理系统</strong></h4>
                     <ul class="m-b">
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Elixir</li>
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Phoenix</li>
@@ -88,7 +88,7 @@ function login() {
                         data: $('#inputForm').serialize(),
                         success: function(r) {
                             if (r.code == 0) {
-                                location.href = "<%= Routes.account_path(@conn, :index) %>";
+                                location.href = "/";
                             } else {
                             	$.modal.closeLoading();
                             	$('.imgcode').click();

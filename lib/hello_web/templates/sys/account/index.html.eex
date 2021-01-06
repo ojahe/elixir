@@ -29,26 +29,38 @@
             <ul class="nav" id="side-menu">
                 <a href="<%= Routes.account_path(@conn, :index) %>">
                     <li class="logo">
-                        <span class="logo-lg">LOGO</span><a href="<%=sys_module_path(@conn, :new)%>" class="btn btn-default" title="新增模块"><i class="fa fa-plus"></i> 新增</a>
+                        <span class="logo-lg">LOGO</span><a href="<%=sys_module_path(@conn, :new)%>"
+                                                            class="btn btn-default" title="新增模块"><i
+                            class="fa fa-plus"></i> 新增</a>
                     </li>
                 </a>
-                 <li >
+                <li>
                     <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">基本功能</span><span
                             class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a>系统管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                             <li><a class="menuItem" href="<%=sys_user_path(@conn, :index)%>">用户管理</a></li>
+                                <!--  <li><a class="menuItem" href="<%=sys_user_path(@conn, :index)%>">用户管理</a></li>
                                 <li><a class="menuItem" href="<%=sys_module_path(@conn, :index)%>">模块管理</a></li>
                                  <li><a class="menuItem" href="<%=sys_config_path(@conn, :index)%>">系统配置</a></li>
-
                                 <li><a class="menuItem" href="<%=sys_dictdata_path(@conn, :index)%>">数据字典</a></li>
                                 <li><a class="menuItem" href="<%=sys_menu_path(@conn, :index)%>">菜单管理</a></li>
                                 <li><a class="menuItem" href="<%=sys_dept_path(@conn, :index)%>">部门管理</a></li>
                                 <li><a class="menuItem" href="<%=sys_role_path(@conn, :index)%>">角色管理</a></li>
                                 <li><a class="menuItem" href="<%=sys_post_path(@conn, :index)%>">岗位管理</a></li>
                                 <li><a class="menuItem" href="<%=sys_area_path(@conn, :index)%>">区域管理</a></li>
-                                <li><a class="menuItem" href="<%=sys_company_path(@conn, :index)%>">公司管理</a></li>
+                                <li><a class="menuItem" href="<%=sys_company_path(@conn, :index)%>">公司管理</a></li>-->
+
+                                <li><a class="menuItem" href="/sys/user/index">用户管理</a></li>
+                                <li><a class="menuItem" href="/sys/module/index">模块管理</a></li>
+                                <li><a class="menuItem" href="/sys/config/index">系统配置</a></li>
+                                <li><a class="menuItem" href="/sys/dictdata/index">数据字典</a></li>
+                                <li><a class="menuItem" href="/sys/menu/index">菜单管理</a></li>
+                                <li><a class="menuItem" href="/sys/dept/index">部门管理</a></li>
+                                <li><a class="menuItem" href="/sys/role/index">角色管理</a></li>
+                                <li><a class="menuItem" href="/sys/post/index">岗位管理</a></li>
+                                <li><a class="menuItem" href="/sys/area/index">区域管理</a></li>
+                                <li><a class="menuItem" href="/sys/company/index">公司管理</a></li>
                             </ul>
                         </li>
 
@@ -72,7 +84,8 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right welcome-message">
 
-                    <li><a title="全屏显示" href="javascript:void(0)" id="fullScreen"><i class="fa fa-arrows-alt"></i> 全屏</a>
+                    <li><a title="全屏显示" href="javascript:void(0)" id="fullScreen"><i class="fa fa-arrows-alt"></i>
+                        全屏</a>
                     </li>
                     <li class="dropdown user-menu">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-hover="dropdown">
@@ -95,7 +108,7 @@
                             </li>
                             <li class="divider"></li>
                             <li><i class="fa fa-sign-out"></i>
-                            <%= link "退出", to:  Routes.account_path(@conn, :delete), method: :delete,class: "fa fa-sign-out"%>
+                                <%= link "退出", to:  Routes.account_path(@conn, :delete), method: :get,class: "fa fa-sign-out"%>
 
                             </li>
                         </ul>
@@ -107,7 +120,7 @@
             <button class="roll-nav roll-left tabLeft">
                 <i class="fa fa-backward"></i>
             </button>
-          <nav class="page-tabs menuTabs">
+            <nav class="page-tabs menuTabs">
                 <div class="page-tabs-content">
                     <a href="javascript:;" class="active menuTab" data-id="/hello/index">首页</a>
                 </div>

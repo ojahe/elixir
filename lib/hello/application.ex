@@ -10,6 +10,7 @@ defmodule Hello.Application do
     children = [
       # Start the Ecto repository
       supervisor(Hello.Repo, []),
+      {Phoenix.PubSub, [name: Hello.PubSub, adapter: Phoenix.PubSub.PG2]},
       # Start the endpoint when the application starts
       supervisor(HelloWeb.Endpoint, []),
       # Start your own worker by calling: Hello.Worker.start_link(arg1, arg2, arg3)

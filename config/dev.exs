@@ -51,7 +51,10 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.MySQL,
+  hostname: "localhost",
+  port: 3306,
   username: "root",
   password: "123456",
   database: "hello_ry",
+  show_sensitive_data_on_connection_error: true,
   pool_size: 10

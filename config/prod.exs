@@ -17,7 +17,7 @@ config :hello, HelloWeb.Endpoint,
        #  load_from_system_env: true,
        # url: [host: "example.com", port: 80],
   http: [port: 8000],
-  url: [host: "192.168.18.250", port: 8000], # This is critical for ensuring web-sockets properly authorize.
+  url: [host: "127.0.0.1", port: 8080], # This is critical for ensuring web-sockets properly authorize.
 
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,

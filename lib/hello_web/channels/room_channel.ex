@@ -1,36 +1,64 @@
 defmodule HelloWeb.RoomChannel do
-  use Phoenix.Channel
-  alias HelloWeb.Presence
-
-  def join("room:lobby", _message, socket) do
-    send(self(), :after_join)
-    {:ok, socket}
-  end
-  def join("room:" <> _private_room_id, _params, _socket) do
-    {:error, %{reason: "unauthorized"}}
-  end
-  def handle_info(:after_join, socket) do
-    push(socket, "presence_state", Presence.list(socket))
-    {:ok, _} = Presence.track(socket, socket.assigns.user_id, %{
-      online_at: inspect(System.system_time(:second))
-    })
-    {:noreply, socket}
-  end
-
-
-  def handle_in("new_msg", %{"body" => body}, socket) do
-    broadcast!(socket, "new_msg", %{body: body})
-    {:noreply, socket}
-  end
-
-  intercept ["user_joined"]
-
-  def handle_out("user_joined", msg, socket) do
-    if Accounts.ignoring_user?(socket.assigns[:user], msg.user_id) do
-      {:noreply, socket}
+  use HelloWeb, :channel
+  alias Hello.Repo
+  alias Hello.Chat.Message
+  @impl true
+  def join("room:lobby", payload, socket) do
+    if authorized?(payload) do
+      #send(self(), :after_join)
+      {:ok, socket}
     else
-      push(socket, "user_joined", msg)
-      {:noreply, socket}
+      {:error, %{reason: "unauthorized"}}
     end
   end
+
+  def handle_in("ping", payload, socket) do
+    {:reply, {:ok, payload}, socket}
+  end
+
+  # Channels can be used in a request/response fashion
+  # by sending replies to requests from the client
+  @impl true
+  def handle_in("device_control", payload, socket) do
+    #IO.puts(payload);
+    %Message{}
+    |>Message.changeset( payload)
+    |> Repo.insert()
+    broadcast(socket, "device_control", payload)
+    {:reply, :ok, socket}
+  end
+
+  # Channels can be used in a request/response fashion
+  # by sending replies to requests from the client
+  @impl true
+  def handle_in("device_status", payload, socket) do
+    #IO.puts(payload);
+    broadcast(socket, "device_status", payload)
+    {:reply, :ok,socket}
+  end
+  @impl true
+  def handle_in(_, payload, socket) do
+    IO.puts(payload);
+   end
+
+  # Add authorization logic here as required.
+  defp authorized?(_payload) do
+    true
+  end
+
+  @impl true
+  def handle_info(:after_join, socket) do
+#    Hello.Chat.Message.get_messages()
+#    |> Enum.each(fn msg ->
+#      push(socket, "device_control", %{
+#        device_id: msg.device_id,
+#        todo: msg.todo,
+#        result: msg.result
+#      })
+#    end)
+
+    # :noreply
+    {:noreply, socket}
+  end
+
 end

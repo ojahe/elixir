@@ -11,12 +11,11 @@ config :hello,
 
 # Configures the endpoint
 config :hello, HelloWeb.Endpoint,
-  url: [host: "192.168.18.250"],
+  url: [host: "127.0.0.1"],
   secret_key_base: "Hr4JA3BA2m9Ji5DlmYUcVsj6pR2Ijb02iiPclPXOQoU1hPhj3sKqtI8VwtV+QRFK",
   render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Hello.PubSub,
-           adapter: Phoenix.PubSub.PG2]
-
+  #pubsub: [name: Hello.PubSub,adapter: Phoenix.PubSub.PG2],
+  pubsub_server: Hello.PubSub
 config :turbo_ecto, Turbo.Ecto,
        repo: Hello.Repo,
        per_page: 10
@@ -40,4 +39,14 @@ config :hello, :generators,
        sample_binary_id: "11111111-1111-1111-1111-111111111111"
 config :arc,
        storage: Arc.Storage.Local
+config :ueberauth, Ueberauth,
+       json_library: Poison,# default is Jason
+       base_path: "/login", # default is "/auth"
+       providers: [
+         identity: {Ueberauth.Strategies.Identity, [callback_methods: ["POST"]]},
+         github: {Ueberauth.Strategy.Github, [request_path: "/login/identity",callback_path: "/login/identity/callback",default_scope: "user,public_repo,notifications",allow_private_emails: true]}
+       ]
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+       client_id: System.get_env("GITHUB_CLIENT_ID"),
+       client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 import_config "#{Mix.env}.exs"

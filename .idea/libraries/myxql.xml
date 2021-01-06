@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="myxql" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/myxql/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/myxql/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/myxql/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

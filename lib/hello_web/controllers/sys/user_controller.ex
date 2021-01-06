@@ -52,7 +52,8 @@ defmodule HelloWeb.Sys.UserController do
           %{
             code: 500,
             msg: ~s(#{gettext("New")}#{dgettext("sys_user","User")}#{gettext("fail")}),
-            errors: Enum.map(
+            errors:
+              Enum.map(
               changeset.errors,
               fn ({propName, {errorMsg, _other}})
               -> if propName == :password_hash do

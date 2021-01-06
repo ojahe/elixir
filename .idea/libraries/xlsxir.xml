@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="xlsxir" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/xlsxir/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/xlsxir/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/xlsxir/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

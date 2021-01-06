@@ -2,6 +2,7 @@ defmodule HelloWeb.Router do
   use HelloWeb, :router
 
   pipeline :browser do
+    plug Ueberauth
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
@@ -12,20 +13,22 @@ defmodule HelloWeb.Router do
   pipeline :api do
     plug :accepts, ["json"]
   end
+  scope "/auth", HelloWeb.Sys do
+    pipe_through :browser
 
-
-
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
   scope "/", HelloWeb.Sys do
-    pipe_through  [:browser,:curren_user]
-    get "/", AccountController, :new
-    scope "/account"  do
-    get "/index", AccountController, :index
-    post "/create", AccountController, :create
-    get "/delete", AccountController, :delete
-    end
+    pipe_through  [:browser, :authenticate_user]
+    get "/", AccountController, :index
+  end
+  scope "/hello", HelloWeb do
+    pipe_through [:browser, :authenticate_user]
+    get "/index", HelloController, :index
   end
 
-  scope "/regist" , HelloWeb.Sys do
+  scope "/regist", HelloWeb.Sys do
     pipe_through [:browser]
     get "/new", RegistController, :new
     post "/create", RegistController, :create
@@ -33,17 +36,20 @@ defmodule HelloWeb.Router do
     post "/update", RegistController, :update
     get "/show/:id", RegistController, :show
   end
-  scope "/hello" , HelloWeb do
-    pipe_through [:browser]
-    get "/index", HelloController, :index
+
+  scope "/account", HelloWeb.Sys  do
+    pipe_through  [:browser]
+    get "/new", AccountController, :new
+    post "/create", AccountController, :create
+    get "/delete", AccountController, :delete
   end
 
   scope "/sys", HelloWeb.Sys, as: :sys do
-    pipe_through [:browser,:authenticate_user]
+    pipe_through [:browser, :authenticate_user]
 
     scope "/user"  do
       get "/index", UserController, :index
-      post "/list_data",  UserController, :list_data
+      post "/list_data", UserController, :list_data
       get "/new", UserController, :new
       post "/create", UserController, :create
       get "/edit/:id/edit", UserController, :edit
@@ -55,7 +61,7 @@ defmodule HelloWeb.Router do
     end
     scope "/module"  do
       get "/index", ModuleController, :index
-      post "/list_data",  ModuleController, :list_data
+      post "/list_data", ModuleController, :list_data
       get "/new", ModuleController, :new
       post "/create", ModuleController, :create
       get "/edit/:id/edit", ModuleController, :edit
@@ -67,7 +73,7 @@ defmodule HelloWeb.Router do
 
     scope "/config"  do
       get "/index", ConfigController, :index
-      post "/list_data",  ConfigController, :list_data
+      post "/list_data", ConfigController, :list_data
       get "/new", ConfigController, :new
       post "/create", ConfigController, :create
       get "/edit/:id/edit", ConfigController, :edit
@@ -78,7 +84,7 @@ defmodule HelloWeb.Router do
     end
     scope "/dicttype"  do
       get "/index", DicttypeController, :index
-      post "/list_data",  DicttypeController, :list_data
+      post "/list_data", DicttypeController, :list_data
       get "/new", DicttypeController, :new
       post "/create", DicttypeController, :create
       get "/edit/:id/edit", DicttypeController, :edit
@@ -90,7 +96,7 @@ defmodule HelloWeb.Router do
     end
     scope "/dictdata"  do
       get "/index", DictdataController, :index
-      post "/list_data",  DictdataController, :list_data
+      post "/list_data", DictdataController, :list_data
       get "/new", DictdataController, :new
       post "/create", DictdataController, :create
       get "/edit/:id/edit", DictdataController, :edit
@@ -101,7 +107,7 @@ defmodule HelloWeb.Router do
     end
     scope "/menu"  do
       get "/index", MenuController, :index
-      post "/list_data",  MenuController, :list_data
+      post "/list_data", MenuController, :list_data
       get "/new", MenuController, :new
       post "/create", MenuController, :create
       get "/edit/:id/edit", MenuController, :edit
@@ -116,7 +122,7 @@ defmodule HelloWeb.Router do
     end
     scope "/dept"  do
       get "/index", DeptController, :index
-      post "/list_data",  DeptController, :list_data
+      post "/list_data", DeptController, :list_data
       get "/new", DeptController, :new
       post "/create", DeptController, :create
       get "/edit/:id/edit", DeptController, :edit
@@ -130,7 +136,7 @@ defmodule HelloWeb.Router do
     end
     scope "/post"  do
       get "/index", PostController, :index
-      post "/list_data",  PostController, :list_data
+      post "/list_data", PostController, :list_data
       get "/new", PostController, :new
       post "/create", PostController, :create
       get "/edit/:id/edit", PostController, :edit
@@ -142,7 +148,7 @@ defmodule HelloWeb.Router do
     end
     scope "/role"  do
       get "/index", RoleController, :index
-      post "/list_data",  RoleController, :list_data
+      post "/list_data", RoleController, :list_data
       get "/new", RoleController, :new
       post "/create", RoleController, :create
       get "/edit/:id/edit", RoleController, :edit
@@ -154,7 +160,7 @@ defmodule HelloWeb.Router do
     end
     scope "/area"  do
       get "/index", AreaController, :index
-      post "/list_data",  AreaController, :list_data
+      post "/list_data", AreaController, :list_data
       get "/new", AreaController, :new
       post "/create", AreaController, :create
       get "/edit/:id/edit", AreaController, :edit
@@ -168,7 +174,7 @@ defmodule HelloWeb.Router do
     end
     scope "/company"  do
       get "/index", CompanyController, :index
-      post "/list_data",  CompanyController, :list_data
+      post "/list_data", CompanyController, :list_data
       get "/new", CompanyController, :new
       post "/create", CompanyController, :create
       get "/edit/:id/edit", CompanyController, :edit
@@ -183,35 +189,35 @@ defmodule HelloWeb.Router do
   end
 
 
-#
-#  defp authenticate_user(
-#         %Plug.Conn{
-#           private: %{
-#             phoenix_action: action
-#           }
-#         } = conn,
-#         _
-#       ) do
-#    IO.puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-#    IO.puts  conn.request_path
-#    IO.puts  action
-#    IO.puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2"
-#    case get_session(conn, :user_id) do
-#      nil ->
-#        conn
-#        |> Phoenix.Controller.put_flash(:error, "您还没有登录！")
-#        |> Phoenix.Controller.redirect(to: "/account/new")
-#        |> halt()
-#      user_id ->
-#        assign(conn, :current_user, Hello.Sys.get_user!(user_id))
-#    end
-#  end
+  #
+  #  defp authenticate_user(
+  #         %Plug.Conn{
+  #           private: %{
+  #             phoenix_action: action
+  #           }
+  #         } = conn,
+  #         _
+  #       ) do
+  #    IO.puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  #    IO.puts  conn.request_path
+  #    IO.puts  action
+  #    IO.puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2"
+  #    case get_session(conn, :user_id) do
+  #      nil ->
+  #        conn
+  #        |> Phoenix.Controller.put_flash(:error, "您还没有登录！")
+  #        |> Phoenix.Controller.redirect(to: "/account/new")
+  #        |> halt()
+  #      user_id ->
+  #        assign(conn, :current_user, Hello.Sys.get_user!(user_id))
+  #    end
+  #  end
   defp authenticate_user(conn, _) do
     case get_session(conn, :user_id) do
       nil ->
         conn
         |> Phoenix.Controller.put_flash(:error, "您还没有登录！")
-        |> Phoenix.Controller.redirect(to: "/")
+        |> Phoenix.Controller.redirect(to: "/account/new")
         |> halt()
       user_id ->
         assign(conn, :current_user, Hello.Sys.get_user2!(user_id))

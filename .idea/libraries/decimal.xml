@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="decimal" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/decimal/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/decimal/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/decimal/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

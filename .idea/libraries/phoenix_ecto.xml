@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="phoenix_ecto" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/phoenix_ecto/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/phoenix_ecto/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/phoenix_ecto/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

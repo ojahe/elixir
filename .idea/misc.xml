@@ -3,7 +3,7 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" project-jdk-name="Elixir 1.9.1" project-jdk-type="Elixir SDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" project-jdk-name="Elixir 1.11.1" project-jdk-type="Elixir SDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>

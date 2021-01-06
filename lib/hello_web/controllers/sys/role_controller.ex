@@ -23,7 +23,24 @@ defmodule HelloWeb.Sys.RoleController do
       }
     )
   end
+   def  roleMenuTreeData(conn, params) do
+     result = Sys.list_menus(params)
+     json(
+       conn,
+       result
 
+     )
+     #    json(
+     #      conn,
+     #      %{
+     #        pageNo: result.page_number,
+     #        total: result.total_entries,
+     #        rows: result.entries,
+     #        code: 0,
+     #        msg: 0
+     #      }
+     #    )
+   end
   def new(conn, params) do
     changeset = Sys.change_role(%Role{})
     render(conn, "new.html", changeset: changeset, validate: "1", title:  gettext("New"))

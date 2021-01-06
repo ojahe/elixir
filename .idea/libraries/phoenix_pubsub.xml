@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="phoenix_pubsub" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/phoenix_pubsub/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/phoenix_pubsub/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/phoenix_pubsub/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

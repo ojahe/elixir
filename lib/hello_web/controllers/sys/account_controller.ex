@@ -1,5 +1,6 @@
 defmodule HelloWeb.Sys.AccountController do
   use HelloWeb, :controller
+  plug Ueberauth
   alias Hello.Sys.Accounts
 
   def index(conn, _params) do
@@ -11,7 +12,8 @@ defmodule HelloWeb.Sys.AccountController do
   def new(conn, _) do
     render(conn, "new.html", validate: "1")
   end
-
+  #|>token = Phoenix.Token.sign(conn, "user socket", user.id)
+  #|> assign(:user_token, token)
   def create(conn, %{"user" => %{"login_name" => email, "password" => password}}) do
     case Accounts.authenticate_by_email_password(email, password) do
       {:ok, user} ->
@@ -40,6 +42,6 @@ defmodule HelloWeb.Sys.AccountController do
   def delete(conn, _) do
     conn
     |> configure_session(drop: true)
-    |> redirect(to: "/")
+    |> redirect(to: "/account/new")
   end
 end

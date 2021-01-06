@@ -1,18 +1,20 @@
 defmodule HelloWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :hello
 
-  socket "/socket", HelloWeb.UserSocket
+  socket "/socket", HelloWeb.UserSocket,
+    websocket: true,
+   longpoll: false
   #socket "/admin-socket", HelloWeb.AdminSocket
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   #plug Plug.Static, at: "/uploads", from: "/media"
-  plug Plug.Static,at: "/", from: :hello, gzip: false
- # only: ~w(css ajax file i18n img ruoyi jquery-validation media fonts images js favicon.ico favicon.png robots.txt admin-lte fonts)
-#  plug Plug.Static,
-#       at: "/", from: :sky, gzip: false,
-#       only: ~w(css fonts images js favicon.ico robots.txt)
+  plug Plug.Static,at: "/", from: :hello, gzip: false,
+  only: ~w(css ajax file i18n img ruoyi jquery-validation media fonts images js favicon.ico favicon.png robots.txt admin-lte fonts)
+  plug Plug.Static,
+       at: "/", from: :sky, gzip: false,
+       only: ~w(css fonts images js favicon.ico robots.txt)
   plug Plug.Static,
        at: "users", from: Path.expand('./users'), gzip: false
     #

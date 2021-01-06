@@ -29,7 +29,7 @@ defmodule Hello.Mixfile do
     [
       mod: {Hello.Application, []},
       env: [],
-      extra_applications: [:logger, :runtime_tools,:pbkdf2_elixir,:xlsxir]
+      extra_applications: [:logger, :runtime_tools,:pbkdf2_elixir,:xlsxir,:ueberauth_github]
     ]
   end
 
@@ -58,28 +58,39 @@ defmodule Hello.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cors_plug, "~> 2.0"},
-      {:cowboy, "~> 2.7.0", override: true},
+      {:cowboy, "~> 2.8.0", override: true},
       {:plug_cowboy, "~> 2.0"},
      # {:cowboy, "~> 1.0"},
      # {:plug_cowboy, "~> 1.0"},
       {:turbo_ecto, "~> 0.4.2"},
       {:turbo_html, "~> 0.2.0"},
-      {:pbkdf2_elixir, path: "./deps/pbkdf2",app: false,override: true},
+     #{:pbkdf2_elixir, path: "./deps/pbkdf2",app: false,override: true},
+      {:pbkdf2_elixir, "~> 0.12"},
       {:mariaex, ">= 0.0.0"},
       {:csv, "~> 1.2.3"},
       {:elixlsx, "~> 0.4.2"},
-      {:myxql, ">= 0.0.0"},
-      #{:jason, "~> 1.0"},
+      #{:myxql, ">= 0.0.0"},
+      {:myxql, "~> 0.4.0", override: true},
+       {:geo, "~> 3.3"},
+          #{:jason, "~> 1.0"},
       {:distillery, "~> 2.0"},
       {:poison, "~> 3.0", override: true},
       {:ecto, "~> 3.1.7"},
       {:ecto_sql, "~> 3.1.6"},
+     # {:uuid, "~> 1.1.8"},
       {:jason, "~> 1.1"},
       {:xlsxir, "~> 1.6.4"},
       {:arc, "~> 0.11.0"},
-      {:arc_ecto, "~> 0.11.3"}
+      {:poolboy, "~> 1.5.1"},
+      {:arc_ecto, "~> 0.11.3"},
+      # Add the dependency
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_github, "~> 0.7"},
+      {:guardian, "~> 2.0"},
+      #{:argon2_elixir, "~> 2.0"}
+      #https://elixir.markhoo.com/di-wu-bu-fen-cheng-xu-ku/poolboy
       #{:paginator, "~> 0.6"}
-     # {:sorted_set_nif, "~> 1.0.0"}
+      #{:sorted_set_nif, "~> 1.0.0"}
       #{:comeonin, "~> 4.1"},
       #{:bcrypt_elixir, "~> 1.0"}
     ]

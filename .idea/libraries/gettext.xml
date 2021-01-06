@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="gettext" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/gettext/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/gettext/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/gettext/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

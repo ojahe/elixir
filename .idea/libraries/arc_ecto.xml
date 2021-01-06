@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="arc_ecto" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/arc_ecto/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/arc_ecto/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/arc_ecto/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

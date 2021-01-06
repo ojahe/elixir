@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="websocket_client" type="mix">
+  <library name="websocket_client">
     <CLASSES />
     <JAVADOC />
     <SOURCES />

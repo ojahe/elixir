@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="arc" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/arc/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/arc/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/arc/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

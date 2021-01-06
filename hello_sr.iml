@@ -8,12 +8,14 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/arc" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/arc_ecto" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/argon2_elixir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/artificery" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/certifi" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/comeonin" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/connection" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cors_plug" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowboy" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowboy_telemetry" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/cowlib" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/csv" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/db_connection" />
@@ -21,19 +23,25 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/distillery" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ecto_sql" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/elixir_make" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/elixlsx" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/erlsom" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/file_system" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/geo" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/gettext" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/guardian" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/hackney" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/idna" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jason" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/jose" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mariaex" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/metrics" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mime" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mimerl" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/myxql" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/oauth2" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/parse_trans" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/pbkdf2_elixir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_html" />
@@ -43,6 +51,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/plug_cowboy" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/plug_crypto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/poison" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/poolboy" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/postgrex" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ranch" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/scrivener" />
@@ -52,6 +61,8 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/telemetry" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/turbo_ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/turbo_html" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth_github" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/xlsxir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/arc" />
@@ -62,6 +73,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/connection" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cors_plug" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cowboy" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cowboy_telemetry" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/cowlib" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/csv" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/db_connection" />
@@ -71,6 +83,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/ecto_sql" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/elixlsx" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/erlsom" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/geo" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/gettext" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/hackney" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/idna" />
@@ -81,6 +94,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/mimerl" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/myxql" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/parse_trans" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/pbkdf2_elixir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/phoenix_ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/phoenix_html" />
@@ -89,6 +103,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/plug_cowboy" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/plug_crypto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/poison" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/poolboy" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/postgrex" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/ranch" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/scrivener" />
@@ -186,5 +201,55 @@
     <orderEntry type="library" name="ssl_verify_fun" level="project" />
     <orderEntry type="library" name="unicode_util_compat" level="project" />
     <orderEntry type="library" name="parse_trans" level="project" />
+    <orderEntry type="library" name="poolboy" level="project" />
+    <orderEntry type="library" name="deep_merge" level="project" />
+    <orderEntry type="library" name="ex_guard" level="project" />
+    <orderEntry type="library" name="uuid" level="project" />
+    <orderEntry type="library" name="phoenix" level="project" />
+    <orderEntry type="library" name="phoenix_ecto" level="project" />
+    <orderEntry type="library" name="phoenix_html" level="project" />
+    <orderEntry type="library" name="scrivener_ecto" level="project" />
+    <orderEntry type="library" name="scrivener_html" level="project" />
+    <orderEntry type="library" name="postgrex" level="project" />
+    <orderEntry type="library" name="phoenix_live_reload" level="project" />
+    <orderEntry type="library" name="gettext" level="project" />
+    <orderEntry type="library" name="cors_plug" level="project" />
+    <orderEntry type="library" name="cowboy" level="project" />
+    <orderEntry type="library" name="plug_cowboy" level="project" />
+    <orderEntry type="library" name="turbo_ecto" level="project" />
+    <orderEntry type="library" name="turbo_html" level="project" />
+    <orderEntry type="library" name="mariaex" level="project" />
+    <orderEntry type="library" name="csv" level="project" />
+    <orderEntry type="library" name="elixlsx" level="project" />
+    <orderEntry type="library" name="myxql" level="project" />
+    <orderEntry type="library" name="distillery" level="project" />
+    <orderEntry type="library" name="poison" level="project" />
+    <orderEntry type="library" name="ecto" level="project" />
+    <orderEntry type="library" name="ecto_sql" level="project" />
+    <orderEntry type="library" name="jason" level="project" />
+    <orderEntry type="library" name="xlsxir" level="project" />
+    <orderEntry type="library" name="arc" level="project" />
+    <orderEntry type="library" name="poolboy" level="project" />
+    <orderEntry type="library" name="arc_ecto" level="project" />
+    <orderEntry type="library" name="telemetry_poller" level="project" />
+    <orderEntry type="library" name="telemetry_metrics" level="project" />
+    <orderEntry type="library" name="dialyxir" level="project" />
+    <orderEntry type="library" name="cowboy_telemetry" level="project" />
+    <orderEntry type="library" name="benchee" level="project" />
+    <orderEntry type="library" name="geo" level="project" />
+    <orderEntry type="library" name="stream_data" level="project" />
+    <orderEntry type="library" name="ueberauth" level="project" />
+    <orderEntry type="library" name="ueberauth_github" level="project" />
+    <orderEntry type="library" name="oauth2" level="project" />
+    <orderEntry type="library" name="bypass" level="project" />
+    <orderEntry type="library" name="guardian" level="project" />
+    <orderEntry type="library" name="jose" level="project" />
+    <orderEntry type="library" name="jsone" level="project" />
+    <orderEntry type="library" name="jsx" level="project" />
+    <orderEntry type="library" name="libdecaf" level="project" />
+    <orderEntry type="library" name="libsodium" level="project" />
+    <orderEntry type="library" name="ojson" level="project" />
+    <orderEntry type="library" name="argon2_elixir" level="project" />
+    <orderEntry type="library" name="elixir_make" level="project" />
   </component>
 </module>

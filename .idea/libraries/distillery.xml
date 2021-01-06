@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="distillery" type="mix">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/_build/dev/lib/distillery/ebin" />
       <root url="file://$PROJECT_DIR$/_build/prod/lib/distillery/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/distillery/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
