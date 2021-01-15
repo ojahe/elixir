@@ -2,234 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dde93189-b3b1-482c-ad28-4d98868b29e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/argon2_elixir.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/bypass.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/cowboy_telemetry.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ex_guard.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/geo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guardian.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jose.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsone.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsx.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libdecaf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libsodium.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/oauth2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/stream_data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth_github.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/uuid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello/chat/message.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello_web/channels/room_channel2.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello_web/channels/user_socket2.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/auth_controller.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/auth/request.html.eex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hello_web/views/sys/auth_view.ex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mix2.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/arc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/arc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/arc_ecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/arc_ecto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/artificery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/artificery.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bcrypt_elixir.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchee_json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/benchfella.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/benchfella.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/binpp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/binpp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/certifi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/certifi.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/cesso.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/cesso.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/comeonin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/comeonin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/connection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/connection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/cors_plug.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/cors_plug.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/coverex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/coverex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/cowboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/cowboy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/credo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/credo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/csv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/csv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/csvlixir.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/csvlixir.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/db_connection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/db_connection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/decimal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/decimal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/dialyze.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/dialyze.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/dialyzex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/dialyzex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/distillery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/distillery.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/earmark.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/earmark.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ecto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ecto_sql.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ecto_sql.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/elixir_make.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/elixir_make.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/elixlsx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/elixlsx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/eqc_ex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/eqc_ex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/erlsom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/erlsom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_aws.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_aws_s3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_aws_s3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_csv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_csv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_doc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_machina.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_machina.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ex_unit_clustered_case.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ex_unit_clustered_case.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/excheck.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/excheck.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/excoveralls.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/exjsx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/exjsx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gettext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gettext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/hackney.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/hackney.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/idna.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/idna.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/inch_ex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/inch_ex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jason.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jason.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jazz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jazz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jiffy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jiffy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/json.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/json.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/kadabra.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/kadabra.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mariaex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mariaex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/metrics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/metrics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mimerl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mimerl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mix_test_watch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mock.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/myxql.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/myxql.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/parse_trans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/parse_trans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/pbkdf2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/pbkdf2_elixir.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/pbkdf2_elixir.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_ecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_ecto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_guides.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_guides.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_html.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_pubsub.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_pubsub.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/plug.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug_cowboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/plug_cowboy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/plug_crypto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/plug_crypto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/poison.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/poison.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/poolboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/poolboy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/postgrex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/postgrex.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ranch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ranch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/rustler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/scrivener.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/scrivener.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/scrivener_ecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/scrivener_ecto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/scrivener_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/scrivener_html.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sorted_set_nif.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ssl_verify_fun.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ssl_verify_fun.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sweet_xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sweet_xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/telemetry.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/toml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/triq.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/triq.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/turbo_ecto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/turbo_ecto.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/turbo_html.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/turbo_html.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/unicode_util_compat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/unicode_util_compat.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/websocket_client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/websocket_client.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/x509.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/x509.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/xlsxir.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/xlsxir.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/dogma.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/guardian_db.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth_identity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/dev.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/prod.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/prod.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_sr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_sr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello/application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/application.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello/sys/company.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/company.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/channels/room_channel.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/channels/room_channel.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/channels/user_socket.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/channels/user_socket.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/account.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/account.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/dept.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/dept.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/post.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/role.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/role.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/sys.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/sys.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/auth_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/auth_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/menu_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/menu_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/post_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/role_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/role_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/user_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/endpoint.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/router.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/autocomplete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/cards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/datetime.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/duallistbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/jasny.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/select.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/sortable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/summernote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/tabs_panels.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/timeline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/validate.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/form/wizard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/icon/fontawesome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/icon/glyphicons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/dialog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/layer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/table/check.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/table/parent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/modal/table/radio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/operate/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/operate/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/operate/edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/operate/other.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/operate/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/report/echarts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/report/metrics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/report/peity.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/report/sparkline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/child.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/curd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/editable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/event.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/export.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/fixedColumns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/groupHeader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/image.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/multi.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/other.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/pageGo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/params.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/remember.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/reorder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/demo/table/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/error/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/error/business.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/error/unauth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/include.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/layout/app.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/layout/app.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/main_v1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/monitor/logininfor/logininfor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/monitor/online/online.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/monitor/operlog/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/monitor/operlog/operlog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/monitor/server/server.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/skin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/index3.html.eex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/new.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/new.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/menu/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/menu/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/auth/request.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/auth/request.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/index.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/index.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/gettext/zh/LC_MESSAGES/sys_company.po" beforeDir="false" afterPath="$PROJECT_DIR$/priv/gettext/zh/LC_MESSAGES/sys_company.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/hello_ry.sql" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/hello_ry.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191218094633_create_offices.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224053612_create_sys_config.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224055443_create_sys_config.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224070836_create_sys_config.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224071734_create_sys_config.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224073945_create_sys_dict_type.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224083812_create_sys_dict_data.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224091113_create_sys_module.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191224094514_create_sys_menu.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191225020219_create_sys_menu.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191225020543_create_sys_menu.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191225025219_create_sys_post.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191225033312_create_sys_post.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20191225033349_create_sys_user.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200204043835_create_sys_role.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200209093015_create_sys_area.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200210025113_create_sys_area.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/migrations/20200212040402_create_sys_company.exs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rel/env.bat.eex" beforeDir="false" afterPath="$PROJECT_DIR$/rel/env.bat.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rel/env.sh.eex" beforeDir="false" afterPath="$PROJECT_DIR$/rel/env.sh.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rel/vm.args.eex" beforeDir="false" afterPath="$PROJECT_DIR$/rel/vm.args.eex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +83,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -793,7 +590,11 @@
       <workItem from="1609600307963" duration="3693000" />
       <workItem from="1609640871643" duration="7685000" />
       <workItem from="1609748791776" duration="2657000" />
-      <workItem from="1609777546987" duration="24558000" />
+      <workItem from="1609777546987" duration="27596000" />
+      <workItem from="1610092111140" duration="2842000" />
+      <workItem from="1610121006251" duration="58887000" />
+      <workItem from="1610675290814" duration="1094000" />
+      <workItem from="1610681460497" duration="403000" />
     </task>
     <task id="LOCAL-00001" summary="初次提交">
       <created>1583766993115</created>
@@ -830,7 +631,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583992693942</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加数据库脚本">
+      <created>1609953626807</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1609953626807</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -859,6 +667,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="439" y="93" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1603095753413" />
+    <state x="455" y="348" key="#Template_Data_Languages" timestamp="1610251181336">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="455" y="348" key="#Template_Data_Languages/0.0.1920.1040@0.0.1920.1040" timestamp="1610251181336" />
     <state x="664" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1609839631067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -883,10 +695,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="789" y="220" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609949107941" />
-    <state x="439" y="93" key="SettingsEditor" timestamp="1609170018577">
+    <state x="439" y="93" key="SettingsEditor" timestamp="1610112678142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="439" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609170018577" />
+    <state x="439" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610112678142" />
+    <state x="0" y="0" key="Vcs.Push.Dialog.v2" timestamp="1609953982448">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609953982448" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609948767049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -895,10 +711,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603074026623" />
-    <state x="660" y="235" width="686" height="532" key="find.popup" timestamp="1608908510703">
+    <state x="660" y="235" width="686" height="638" key="find.popup" timestamp="1610211055613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="660" y="235" width="686" height="532" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608908510703" />
+    <state x="660" y="235" width="686" height="638" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610211055613" />
     <state x="333" y="129" key="new project wizard" timestamp="1602511445703">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

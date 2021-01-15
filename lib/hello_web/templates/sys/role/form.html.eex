@@ -1,227 +1,145 @@
 <body class="white-bg">
-    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
-         <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
-         <%= hidden_input f, :id %>
-              
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role name") %>">
-								<span class="required ">*</span> <%= label f, :role_name,dgettext("sys_role","Role name") %>:<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-							 <%= text_input f, :role_name,"required": true, class: "form-control" %>
-							</div>
-						</div>
-					</div>
-				</div>
-           
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role code") %>">
-								<span class="required ">*</span> <%= label f, :role_code,dgettext("sys_role","Role code") %>:<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-							 <%= text_input f, :role_code,"required": true, class: "form-control" %>
-							</div>
-						</div>
-					</div>
-				</div>
-           
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role sort") %>">
-								<span class="required ">*</span> <%= label f, :role_sort,dgettext("sys_role","Role sort") %>:<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-							 <%= number_input f, :role_sort,"required": true, class: "form-control" %>
-							</div>
-						</div>
-					</div>
-				</div>
-           <div class="row">
-			    <div class="col-xs-12">
-					 <div class="form-group">
-						 <label class="control-label col-sm-3" title="<%= gettext("Status") %>">
-							 <span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i class="fa icon-question hide"></i></label>
-					     <div class="col-sm-8">
-						     <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
-						 </div>
-					 </div>
-				 </div>
-				  </div>
-                <div class="row">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
-								<span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-							 <%= textarea f, :remark,required: false, class: "form-control" %>
-							</div>
-						</div>
-					</div>
-				</div>
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <%= form_for @changeset, @action,[class: :"form-horizontal", id: "inputForm"], fn f -> %>
+    <%= hidden_input f, :id %>
 
-		<div class="row">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role name") %>">
+                    <span class="required ">*</span> <%= label f, :role_name,dgettext("sys_role","Role name") %>:<i
+                        class="fa icon-question hide"></i></label>
+                <div class="col-sm-8">
+                    <%= text_input f, :role_name,"required": true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<div class="col-xs-12">
-				<div class="form-group">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role code") %>">
+                    <span class="required ">*</span> <%= label f, :role_code,dgettext("sys_role","Role code") %>:<i
+                        class="fa icon-question hide"></i></label>
+                <div class="col-sm-8">
+                    <%= text_input f, :role_code,"required": true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
 
-				<label class="col-sm-3 control-label">菜单权限:</label>
-				<div class="col-sm-8">
-					<label class="check-box">
-						<input type="checkbox" value="1">展开/折叠</label>
-					<label class="check-box">
-						<input type="checkbox" value="2">全选/全不选</label>
-					<label class="check-box">
-						<input type="checkbox" value="3" checked>父子联动</label>
-					<div id="menuTrees" class="ztree ztree-border"></div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<% end %>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-3" title="<%= dgettext("sys_role","Role sort") %>">
+                    <span class="required ">*</span> <%= label f, :role_sort,dgettext("sys_role","Role sort") %>:<i
+                        class="fa icon-question hide"></i></label>
+                <div class="col-sm-8">
+                    <%= number_input f, :role_sort,"required": true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-3" title="<%= gettext("Status") %>">
+                    <span class="required ">*</span> <%= label f, :status,gettext("Status") %>:<i
+                        class="fa icon-question hide"></i></label>
+                <div class="col-sm-8">
+                    <%= select f, :status,get_dict_list("sys_normal_disable") ,required: true, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label col-sm-3" title="<%= gettext("Remark") %>">
+                    <span class="required "></span> <%= label f, :remark,gettext("Remark") %>:<i
+                        class="fa icon-question hide"></i></label>
+                <div class="col-sm-8">
+                    <%= textarea f, :remark,required: false, class: "form-control" %>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+
+                <label class="col-sm-3 control-label">菜单权限:</label>
+                <div class="col-sm-8">
+                    <label class="check-box">
+                        <input type="checkbox" value="1">展开/折叠</label>
+                    <label class="check-box">
+                        <input type="checkbox" value="2">全选/全不选</label>
+                    <label class="check-box">
+                        <input type="checkbox" value="3" checked>父子联动</label>
+                    <div id="menuTrees" class="ztree ztree-border"></div>
+					<input id="role_menus" name="role[menus]" type="hidden" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+<script src="<%= static_path(@conn, "/ajax/libs/jquery-ztree/3.5/js/jquery.ztree.all-3.5.js") %>"></script>
+<link href="<%= static_path(@conn,"/ajax/libs/jquery-ztree/3.5/css/metro/zTreeStyle.css") %>" rel="stylesheet"/>
 <script>
- function submitHandler() {
-	        if ($.validate.form()) {
-	            $.operate.save(
-	                "<%= @action %>",
-	                $('#inputForm').serialize(),
-	                function(result){
-                		if(result.code != web_status.SUCCESS){
-                			  result.errors.forEach(error =>{
-                              var p = $('<label id="role_'+error.propName+'-error" class="has-error" for="module_'+error.propName+'" style="top: 25px; left: 20px;">'+error.errorMsg+'</label>');
-                             	$('#role_'+error.propName).after(p);
-                             	})
-                        }
+    function submitHandler() {
+		$("#role_menus").val($.tree.getCheckedNodes());
+        if ($.validate.form()) {
+            $.operate.save(
+                "<%= @action %>",
+					$('#inputForm').serialize(),
+                function (result) {
+                    if (result.code != web_status.SUCCESS) {
+                        result.errors.forEach(error => {
+                            var p = $('<label id="role_' + error.propName + '-error" class="has-error" for="module_' + error.propName + '" style="top: 25px; left: 20px;">' + error.errorMsg + '</label>');
+                            $('#role_' + error.propName).after(p);
+                        })
                     }
-	        )
-	    }
- }
+                }
+            )
+        }
+    };
+
+    $(function () {
+        var url = '<%= sys_role_path(@conn, :roleMenuTreeData)%>?id=' + $("#role_id").val();
+        var options = {
+            id: "menuTrees",
+            url: url,
+            check: {enable: true},
+            expandLevel: 0
+        };
+        $.tree.init(options);
+    });
+
+    $('input').on('ifChanged', function (obj) {
+        var type = $(this).val();
+        var checked = obj.currentTarget.checked;
+        if (type == 1) {
+            if (checked) {
+                $._tree.expandAll(true);
+            } else {
+                $._tree.expandAll(false);
+            }
+        } else if (type == "2") {
+            if (checked) {
+                $._tree.checkAllNodes(true);
+            } else {
+                $._tree.checkAllNodes(false);
+            }
+        } else if (type == "3") {
+            if (checked) {
+                $._tree.setting.check.chkboxType = {"Y": "ps", "N": "ps"};
+            } else {
+                $._tree.setting.check.chkboxType = {"Y": "", "N": ""};
+            }
+        }
+    })
 </script>
-	<script type="text/javascript">
-		var ctx="http://127.0.0.1:4000/";
-		$(function() {
-			var url = ctx + "system/menu/roleMenuTreeData?roleId=" + $("#id").val();
-			var options = {
-				id: "menuTrees",
-				url: url,
-				check: { enable: true },
-				expandLevel: 0
-			};
-			$.tree.init(options);
-		});
-
-		$("#form-role-edit").validate({
-			onkeyup: false,
-			rules:{
-				roleName:{
-					remote: {
-						url: ctx + "system/role/checkRoleNameUnique",
-						type: "post",
-						dataType: "json",
-						data: {
-							"roleId": function() {
-								return $("#roleId").val();
-							},
-							"roleName": function() {
-								return $.common.trim($("#roleName").val());
-							}
-						},
-						dataFilter: function(data, type) {
-							return $.validate.unique(data);
-						}
-					}
-				},
-				roleKey:{
-					remote: {
-						url: ctx + "system/role/checkRoleKeyUnique",
-						type: "post",
-						dataType: "json",
-						data: {
-							"roleId": function() {
-								return $("#roleId").val();
-							},
-							"roleKey": function() {
-								return $.common.trim($("#roleKey").val());
-							}
-						},
-						dataFilter: function(data, type) {
-							return $.validate.unique(data);
-						}
-					}
-				},
-				roleSort:{
-					digits:true
-				},
-			},
-			messages: {
-				"roleName": {
-					remote: "角色名称已经存在"
-				},
-				"roleKey": {
-					remote: "角色权限已经存在"
-				}
-			},
-			focusCleanup: true
-		});
-
-		$('input').on('ifChanged', function(obj){
-			var type = $(this).val();
-			var checked = obj.currentTarget.checked;
-			if (type == 1) {
-				if (checked) {
-					$._tree.expandAll(true);
-				} else {
-					$._tree.expandAll(false);
-				}
-			} else if (type == "2") {
-				if (checked) {
-					$._tree.checkAllNodes(true);
-				} else {
-					$._tree.checkAllNodes(false);
-				}
-			} else if (type == "3") {
-				if (checked) {
-					$._tree.setting.check.chkboxType = { "Y": "ps", "N": "ps" };
-				} else {
-					$._tree.setting.check.chkboxType = { "Y": "", "N": "" };
-				}
-			}
-		})
-
-		function edit() {
-			var roleId = $("input[name='roleId']").val();
-			var roleName = $("input[name='roleName']").val();
-			var roleKey = $("input[name='roleKey']").val();
-			var roleSort = $("input[name='roleSort']").val();
-			var status = $("input[id='status']").is(':checked') == true ? 0 : 1;
-			var remark = $("input[name='remark']").val();
-			var menuIds = $.tree.getCheckedNodes();
-			$.ajax({
-				cache : true,
-				type : "POST",
-				url : ctx + "system/role/edit",
-				data : {
-					"roleId": roleId,
-					"roleName": roleName,
-					"roleKey": roleKey,
-					"roleSort": roleSort,
-					"status": status,
-					"remark": remark,
-					"menuIds": menuIds
-				},
-				async : false,
-				error : function(request) {
-					$.modal.alertError("系统错误");
-				},
-				success : function(data) {
-					$.operate.successCallback(data);
-				}
-			});
-		}
-
-
-	</script>
 </body>

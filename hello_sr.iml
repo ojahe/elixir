@@ -63,6 +63,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/turbo_html" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth_github" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth_identity" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/xlsxir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/arc" />
@@ -116,7 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xlsxir" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Elixir 1.11.1" jdkType="Elixir SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="phoenix" level="project" />
     <orderEntry type="library" name="phoenix_pubsub" level="project" />
@@ -251,5 +252,8 @@
     <orderEntry type="library" name="ojson" level="project" />
     <orderEntry type="library" name="argon2_elixir" level="project" />
     <orderEntry type="library" name="elixir_make" level="project" />
+    <orderEntry type="library" name="ueberauth_identity" level="project" />
+    <orderEntry type="library" name="dogma" level="project" />
+    <orderEntry type="library" name="guardian_db" level="project" />
   </component>
 </module>

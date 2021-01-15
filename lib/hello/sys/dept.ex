@@ -20,8 +20,6 @@ defmodule Hello.Sys.Dept do
   #,on_replace: :nilify
  field :beginTime, :naive_datetime, virtual: true
  field :endTime, :naive_datetime, virtual: true
-
-
     timestamps()
   end
 

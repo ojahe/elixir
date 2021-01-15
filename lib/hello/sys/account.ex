@@ -16,7 +16,6 @@ defmodule Hello.Sys.Account do
 
   @doc false
   def changeset(account, attrs) do
-
    cg = account
     |> cast(attrs, [:password_hash])
     #|> validate_required([:email])

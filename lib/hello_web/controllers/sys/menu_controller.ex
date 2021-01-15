@@ -136,7 +136,11 @@ defmodule HelloWeb.Sys.MenuController do
        )
      )
    end
+
    def icon(conn,_param ) do
      render(conn, "icon.html")
    end
+
+
+
 end

@@ -3,12 +3,14 @@ defmodule HelloWeb.Sys.AuthController do
   Auth controller responsible for handling Ueberauth responses
   """
   use HelloWeb, :controller
+  alias Hello.Sys.Accounts
 
   plug(Ueberauth)
 
   alias Ueberauth.Strategy.Helpers
 
   def request(conn, _params) do
+    IO.puts(Helpers.callback_url(conn))
     render(conn, "request.html", callback_url: Helpers.callback_url(conn))
   end
 
@@ -23,6 +25,32 @@ defmodule HelloWeb.Sys.AuthController do
     conn
     |> put_flash(:error, "Failed to authenticate.")
     |> redirect(to: "/")
+  end
+
+
+  def create(conn, %{"user" => %{"login_name" => email, "password" => password}}) do
+    case Accounts.authenticate_by_email_password(email, password) do
+      {:ok, user} ->
+        conn
+        |> configure_session(renew: true)
+        |> put_session(:user_id, user.id)
+        |>json(
+            %{
+              code: 0,
+              msg: ~s(登录成功),
+              errors: []
+            }
+          )
+      {:error, :unauthorized} ->
+        json(
+          conn,
+          %{
+            code: 500,
+            msg: ~s(用户名或者密码错误，请重试。),
+            errors: []
+          }
+        )
+    end
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
@@ -40,4 +68,19 @@ defmodule HelloWeb.Sys.AuthController do
         |> redirect(to: "/")
     end
   end
+#
+#  def identity_callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
+#    case validate_password(auth.credentials) do
+#      :ok ->
+#        user = %{id: auth.uid, name: name_from_auth(auth), avatar: auth.info.image}
+#        conn
+#        |> put_flash(:info, "Successfully authenticated.")
+#        |> put_session(:current_user, user)
+#        |> redirect(to: "/")
+#      { :error, reason } ->
+#        conn
+#        |> put_flash(:error, reason)
+#        |> redirect(to: "/")
+#    end
+#  end
 end

@@ -2,6 +2,7 @@ defmodule HelloWeb.Sys.PostController do
    use HelloWeb, :controller
    alias Hello.Sys
    alias Hello.Sys.Post
+   alias Hello.Sys.Dept
    require Elixlsx
    import HelloWeb.Gettext
 
@@ -79,7 +80,28 @@ defmodule HelloWeb.Sys.PostController do
         )
     end
   end
-
+   def update_status(conn, %{"post" => %{"id" => id} = params}) do
+     post =Sys.get_post!(id)
+     case Sys.update_post_status(get_session(conn, :user_id),post, params) do
+       {:ok, post} ->
+         conn
+         |> json(%{ msg: ~s(#{gettext("Update")}#{dgettext("sys_post","Post")}#{gettext("success")}), code: 0})
+       {:error, %Ecto.Changeset{} = changeset} ->
+         json(
+           conn,
+           %{
+             code: 500,
+             msg: ~s(#{gettext("Update")}#{dgettext("sys_post","Post")}#{gettext("fail")}),
+             errors: Enum.map(
+               changeset.errors,
+               fn ({propName, {errorMsg, _other}})
+               -> %{"propName" => to_string(propName), "errorMsg" => errorMsg}
+               end
+             )
+           }
+         )
+     end
+   end
 
 
   def delete(conn, %{"ids" => ids}) do
@@ -99,4 +121,43 @@ defmodule HelloWeb.Sys.PostController do
     end
   end
 
+   def  postDeptsTreeData(conn, %{"id" => id} = params) do
+     post = Sys.get_post!(id)
+
+     posts = Enum.map(
+       post.depts,
+       fn (%Dept{} = d)
+       -> {
+            d.id,
+            d.dept_name
+          }
+       end
+     )
+     result = Sys.list_depts_all(%{})
+     json(
+       conn,
+       Enum.map(
+         result,
+         fn (%Dept{} = d)
+         -> %{
+              "id" => d.id,
+              "pId" => if d.parent do
+                d.parent.id
+              else
+                ""
+              end,
+              "name" => d.dept_name,
+              "title" => d.dept_name,
+              "checked" => if List.keyfind(posts, d.id, 0, nil) == nil do
+                false
+              else
+                true
+              end,
+              "open" => true,
+              "nocheck" => false
+            }
+         end
+       )
+     )
+   end
 end

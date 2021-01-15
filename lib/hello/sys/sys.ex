@@ -147,7 +147,16 @@ defmodule Hello.Sys do
     |> Ecto.Changeset.cast_assoc(:account, with: &Account.changeset/2)
     |> Repo.update()
   end
-
+ def  update_user_status(user_id,%User{} = user, attrs) do
+    user
+    #|> Repo.preload(:roles) # Load existing data
+    |> User.changeset(attrs)
+    |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:roles, user.roles)
+    |> Ecto.Changeset.put_assoc(:posts, user.posts)
+    |> Ecto.Changeset.cast_assoc(:account, with: &Account.changeset/2)
+    |> Repo.update()
+  end
   @doc """
   Deletes a User.
 
@@ -838,7 +847,20 @@ defmodule Hello.Sys do
     |> order_by(^({:asc, :order_num}))
     |> Repo.all
   end
-
+  def list_menu(nil) do
+    []
+  end
+  def list_menu("") do
+    []
+  end
+  def list_menu([]) do
+   []
+  end
+  def list_menu(ids) do
+    Menu
+    from( p in Menu, where: p.id in ^(String.split(ids,",")))
+    |>  Repo.all()
+  end
   @doc """
   Gets a single menu.
 
@@ -993,7 +1015,7 @@ defmodule Hello.Sys do
     |> preload(:updated_by)
     |> Repo.all
   end
-  def list_depts_all (params) do
+  def list_depts_all (_params) do
     from(s in Dept)
     |> order_by(^({:asc,:order_num}))
     |> preload(:parent)
@@ -1030,6 +1052,23 @@ defmodule Hello.Sys do
     |> Repo.preload(:inserted_by)
     |> Repo.preload(:updated_by)
   end
+
+  def list_dept(nil) do
+    []
+  end
+  def list_dept("") do
+    []
+  end
+  def list_dept([]) do
+    []
+  end
+  def list_dept(ids) do
+    Dept
+    from( p in Dept, where: p.id in ^(String.split(ids,",")))
+    |>  Repo.all()
+  end
+
+
   @doc """
   Creates a dept.
 
@@ -1197,7 +1236,7 @@ defmodule Hello.Sys do
       ** (Ecto.NoResultsError)
 
   """
-  def get_post!(id), do: Repo.get!(Post, id) |>  Repo.preload(:dept)   |>  Repo.preload(:inserted_by)  |>  Repo.preload(:updated_by)
+  def get_post!(id), do: Repo.get!(Post, id) |>  Repo.preload(:dept)   |>  Repo.preload(:inserted_by)  |>  Repo.preload(:updated_by)  |>  Repo.preload(:depts)
 
   @doc """
   Creates a post.
@@ -1216,6 +1255,7 @@ defmodule Hello.Sys do
     |> Post.changeset(attrs)
     |> Ecto.Changeset.put_change(:inserted_by_id, user_id)
     |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:depts, list_dept(attrs["depts"]))
     |> Repo.insert()
   end
   @doc """
@@ -1234,9 +1274,16 @@ defmodule Hello.Sys do
     post
     |> Post.changeset(attrs)
     |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:depts, list_dept(attrs["depts"]))
     |> Repo.update()
   end
-
+  def update_post_status(user_id,%Post{} = post, attrs) do
+    post
+    |> Post.changeset(attrs)
+    |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:depts, post.depts)
+    |> Repo.update()
+  end
   @doc """
   Deletes a Post.
 
@@ -1350,6 +1397,7 @@ defmodule Hello.Sys do
     Repo.get!(Role, id)
     |>  Repo.preload(:inserted_by)
     |>  Repo.preload(:updated_by)
+    |>  Repo.preload(:menus)
   end
   @doc """
   Creates a role.
@@ -1368,8 +1416,12 @@ defmodule Hello.Sys do
     |> Role.changeset(attrs)
     |> Ecto.Changeset.put_change(:inserted_by_id, user_id)
     |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:menus, list_menu(attrs["menus"]))
     |> Repo.insert()
   end
+
+
+
   @doc """
   Updates a role.
 
@@ -1386,9 +1438,16 @@ defmodule Hello.Sys do
     role
     |> Role.changeset(attrs)
     |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:menus, list_menu(attrs["menus"]))
     |> Repo.update()
   end
-
+  def update_role_status(user_id,%Role{} = role, attrs) do
+    role
+    |> Role.changeset(attrs)
+    |> Ecto.Changeset.put_change(:updated_by_id, user_id)
+    |> Ecto.Changeset.put_assoc(:menus,role.menus )
+    |> Repo.update()
+  end
   @doc """
   Deletes a Role.
 

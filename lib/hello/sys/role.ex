@@ -15,7 +15,7 @@ defmodule Hello.Sys.Role do
        belongs_to :updated_by, Hello.Sys.User
        field :beginTime, :naive_datetime, virtual: true
        field :endTime, :naive_datetime, virtual: true
-
+       many_to_many :menus, Hello.Sys.Menu, join_through: "sys_role_menu",join_keys: [role_id: :id, menu_id: :id],on_replace: :delete,on_delete: :delete_all
        timestamps()
   end
 

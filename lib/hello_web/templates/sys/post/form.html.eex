@@ -55,17 +55,7 @@
 				</div>
 
            
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label class="control-label col-sm-3" title="<%= dgettext("sys_post","Data scope") %>">
-								<span class="required ">*</span> <%= label f, :data_scope,dgettext("sys_post","Data scope") %>:<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-							 <%= select f, :data_scope,get_dict_list("sys_data_scope") ,required: true, class: "form-control" %>
-							</div>
-						</div>
-					</div>
-				</div>
+
 
            
 				<div class="row">
@@ -92,10 +82,41 @@
 					</div>
 				</div>
 
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<label class="control-label col-sm-3" title="<%= dgettext("sys_post","Data scope") %>">
+						<span class="required ">*</span> <%= label f, :data_scope,dgettext("sys_post","Data scope") %>:<i class="fa icon-question hide"></i></label>
+					<div class="col-sm-8">
+						<%= select f, :data_scope,get_dict_list("sys_data_scope") ,required: true, class: "form-control" %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+
+					<label class="col-sm-3 control-label">数据权限:</label>
+					<div class="col-sm-8">
+						<label class="check-box">
+							<input type="checkbox" value="1">展开/折叠</label>
+						<label class="check-box">
+							<input type="checkbox" value="2">全选/全不选</label>
+						<label class="check-box">
+							<input type="checkbox" value="3" checked>父子联动</label>
+						<div id="deptTrees" class="ztree ztree-border"></div>
+						<input id="post_depts" name="post[depts]" type="hidden" >
+					</div>
+				</div>
+			</div>
+		</div>
            
 		<% end %>
 	</div>
-
+	<script src="<%= static_path(@conn, "/ajax/libs/jquery-ztree/3.5/js/jquery.ztree.all-3.5.js") %>"></script>
+	<link href="<%= static_path(@conn,"/ajax/libs/jquery-ztree/3.5/css/metro/zTreeStyle.css") %>" rel="stylesheet"/>
 <script>
  		/*部门管理-修改-选择部门树*/
  		function selectDeptTree() {
@@ -124,6 +145,7 @@
  		}
 
  function submitHandler() {
+	 $("#post_depts").val($.tree.getCheckedNodes());
 	        if ($.validate.form()) {
 	            $.operate.save(
 	                "<%= @action %>",
@@ -139,5 +161,40 @@
 	        )
 	    }
  }
+
+  $(function () {
+			var url = '<%= sys_post_path(@conn, :postDeptsTreeData)%>?id=' + $("#post_id").val();
+			var options = {
+				id: "deptTrees",
+				url: url,
+				check: {enable: true},
+				expandLevel: 0
+			};
+			$.tree.init(options);
+		});
+
+		$('input').on('ifChanged', function (obj) {
+			var type = $(this).val();
+			var checked = obj.currentTarget.checked;
+			if (type == 1) {
+				if (checked) {
+					$._tree.expandAll(true);
+				} else {
+					$._tree.expandAll(false);
+				}
+			} else if (type == "2") {
+				if (checked) {
+					$._tree.checkAllNodes(true);
+				} else {
+					$._tree.checkAllNodes(false);
+				}
+			} else if (type == "3") {
+				if (checked) {
+					$._tree.setting.check.chkboxType = {"Y": "ps", "N": "ps"};
+				} else {
+					$._tree.setting.check.chkboxType = {"Y": "", "N": ""};
+				}
+			}
+		})
 </script>
 </body>

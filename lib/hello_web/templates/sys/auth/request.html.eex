@@ -1,50 +1,108 @@
-<%= form_tag @callback_url, method: "post" do %>
-  <div class='control-group'>
-    <label class='control-label' for='email-input'>Email</label>
-    <input class='form-control' type='email' name='email' value='<%= @conn.params["email"] %>' />
-  </div>
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <div class='control-group'>
-    <label class='control-label' for='first-name-input'>First Name</label>
-    <input class='form-control' type='text' name='first_name' value='<%= @conn.params["first_name"] %>' />
-  </div>
+  <title>登录圣河系统</title>
+  <meta name="description" content="圣河后台管理框架">
 
-  <div class='control-group'>
-    <label class='control-label' for='last-name-input'>Last Name</label>
-    <input class='form-control' type='text' name='last_name' value='<%= @conn.params["last_name"] %>' />
-  </div>
+  <link href="<%= static_path(@conn, "/css/login.min.css") %>" rel="stylesheet"/>
 
-  <div class='control-group'>
-    <label class='control-label' for='nickname-input'>Username</label>
-    <input class='form-control' type='text' name='username' value='<%= @conn.params["username"] %>' />
-  </div>
+  <!--[if lt IE 9]>
+  <meta http-equiv="refresh" content="0;ie.html" />
+  <![endif]-->
+  <link href="<%= static_path(@conn, "/static/favicon.ico") %>" rel="stylesheet"/>
+  <style type="text/css">label.error { position:inherit;  }</style>
+  <script>
+    if(window.top!==window.self){window.top.location=window.location};
+  </script>
+</head>
 
-  <div class='control-group'>
-    <label class='control-label' for='phone-input'>Phone</label>
-    <input class='form-control' type='tel' name='phone' value='<%= @conn.params["phone"] %>' />
-  </div>
+<body>
 
-  <div class='control-group'>
-    <label class='control-label' for='location-input'>Location</label>
-    <input class='form-control' type='text' name='location' value='<%= @conn.params["location"] %>' />
-  </div>
+<div class="signinpanel">
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="signin-info">
+        <div class="logopanel m-b">
+          <h1><img alt="[ 圣河 ]" src="<%= static_path(@conn, "/img/logo.png") %>"></h1>
+        </div>
+        <div class="m-b"></div>
+        <h4>欢迎使用 <strong>后台管理系统</strong></h4>
+        <ul class="m-b">
+          <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Elixir</li>
+          <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Phoenix</li>
+          <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Ecto</li>
+          <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> jQuery</li>
+          <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
+        </ul>
+        <strong>还没有账号？ <a href="#" onclick="addnew()">立即添加&raquo;</a></strong>
+      </div>
+    </div>
+    <div class="col-sm-5">
 
-  <div class='control-group'>
-    <label class='control-label' for='description-input'>Description</label>
-    <textarea class='form-control' name='description' value='<%= @conn.params["description"] %>'></textarea>
-  </div>
+      <%= form_for @conn,  @callback_url, [method: :post, as: :user,class: :"form-horizontal", id: "inputForm"], fn f -> %>
 
-  <div class='control-group'>
-    <label class='control-label' for='password-input'>Password</label>
-    <input class='form-control' type='password' name='password' />
-  </div>
+      <h4 class="no-margins">登录：</h4>
+      <p class="m-t-md"></p>
+      <%= text_input f, :login_name, class: "form-control", placeholder: "用户名","required": true %>
+      <%= password_input f, :password,class: "form-control", placeholder: "密码","required": true,type: "password" %>
 
-  <div class='control-group'>
-    <label class='control-label' for='password-confirmation-input'>Confirm Password</label>
-    <input class='form-control' type='password' name='password_confirmation' />
-  </div>
+      <div class="row m-t" th:if="${captchaEnabled==true}">
+        <div class="col-xs-6">
+          <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5" autocomplete="off">
+        </div>
+        <div class="col-xs-6">
+          <a href="javascript:void(0);" title="点击更换验证码">
+            <img th:src="@{captcha/captchaImage(type=${captchaType})}" class="imgcode" width="85%"/>
+          </a>
+        </div>
+      </div>
+      <div class="checkbox-custom" th:classappend="${captchaEnabled==false} ? 'm-t'">
+        <input type="checkbox" id="rememberme" name="rememberme"> <label for="rememberme">记住我</label>
+      </div>
 
-  <div class='control-group'>
-    <button class='btn btn-primary'>Login</button>
+      <button class="btn btn-success btn-block" type="button" id="btnSubmit" onclick="login()" data-loading="正在验证登录，请稍后...">登录</button>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <div class="signup-footer">
+    <div class="pull-left">
+      &copy; 2020 All Rights Reserved. SRiver <br>
+    </div>
+  </div>
+</div>
+<script th:inline="javascript">
+  var ctx = "<%= static_path(@conn, "/") %>";
+  var captchaType = "[[${captchaType}]]";
+
+</script>
+
+<script>
+  function login() {
+    if ($.validate.form()) {
+      $.modal.loading($("#btnSubmit").data("loading"));
+      $.ajax({
+        type: "post",
+        url: "<%= Routes.account_path(@conn, :create) %>",
+        data: $('#inputForm').serialize(),
+        success: function(r) {
+          if (r.code == 0) {
+            location.href = "/";
+          } else {
+            $.modal.closeLoading();
+            $('.imgcode').click();
+            $(".code").val("");
+            $.modal.msg(r.msg);
+          }
+        }
+      });
+    }
+  }
+  function addnew() {
+    $.modal.open("用户注册", "<%= regist_path(@conn, :new)%>?deptId=100");
+  }
+</script>
+</body>
+</html>

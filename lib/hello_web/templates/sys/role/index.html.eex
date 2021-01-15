@@ -174,14 +174,14 @@
 		/* 状态停用 */
 		function disable(id) {
 			//$.modal.confirm("确认要停用吗？", function() {
-				$.operate.get( "<%= sys_role_path(@conn, :update)%>?role[id]="+id+"&role[status]=1");
+				$.operate.get( "<%= sys_role_path(@conn, :update_status)%>?role[id]="+id+"&role[status]=1");
 		    //})
 		}
 
 		/* 状态启用 */
 		function enable(id) {
 			//$.modal.confirm("确认要启用吗？", function() {
-				$.operate.get( "<%= sys_role_path(@conn, :update)%>?role[id]="+id+"&role[status]=0");
+				$.operate.get( "<%= sys_role_path(@conn, :update_status)%>?role[id]="+id+"&role[status]=0");
 		    //})
 		}
     </script>

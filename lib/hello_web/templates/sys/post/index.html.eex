@@ -252,14 +252,14 @@
 		/* 用户管理-停用 */
 		function disable(id) {
 			//$.modal.confirm("确认要停用用户吗？", function() {
-				$.operate.get( "<%= sys_post_path(@conn, :update) %>?post[id]="+id+"&post[status]=1");
+				$.operate.get( "<%= sys_post_path(@conn, :update_status) %>?post[id]="+id+"&post[status]=1");
 		    //})
 		}
 
 		/* 用户管理启用 */
 		function enable(id) {
 			//$.modal.confirm("确认要启用用户吗？", function() {
-				$.operate.get("<%= sys_post_path(@conn, :update) %>?post[id]="+id+"&post[status]=0");
+				$.operate.get("<%= sys_post_path(@conn, :update_status) %>?post[id]="+id+"&post[status]=0");
 		    //})
 		}
         		function addnew() {

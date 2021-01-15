@@ -29,7 +29,7 @@ defmodule Hello.Mixfile do
     [
       mod: {Hello.Application, []},
       env: [],
-      extra_applications: [:logger, :runtime_tools,:pbkdf2_elixir,:xlsxir,:ueberauth_github]
+      extra_applications: [:logger, :runtime_tools,:pbkdf2_elixir,:xlsxir,:ueberauth_github,:ueberauth_identity]
     ]
   end
 
@@ -86,7 +86,9 @@ defmodule Hello.Mixfile do
       # Add the dependency
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.7"},
+       {:ueberauth_identity, "~> 0.2"},
       {:guardian, "~> 2.0"},
+     # {:guardian_db, "~> 0.7", override: true}
       #{:argon2_elixir, "~> 2.0"}
       #https://elixir.markhoo.com/di-wu-bu-fen-cheng-xu-ku/poolboy
       #{:paginator, "~> 0.6"}

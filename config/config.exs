@@ -41,10 +41,10 @@ config :arc,
        storage: Arc.Storage.Local
 config :ueberauth, Ueberauth,
        json_library: Poison,# default is Jason
-       base_path: "/login", # default is "/auth"
+       base_path: "/auth", # default is "/auth"
        providers: [
-         identity: {Ueberauth.Strategies.Identity, [callback_methods: ["POST"]]},
-         github: {Ueberauth.Strategy.Github, [request_path: "/login/identity",callback_path: "/login/identity/callback",default_scope: "user,public_repo,notifications",allow_private_emails: true]}
+         identity: {Ueberauth.Strategies.Identity,[callback_methods: ["POST"],request_path: "/identity",callback_path: "/identity/callback"]},
+         github: {Ueberauth.Strategy.Github, [request_path: "/identity",callback_path: "/identity/callback",default_scope: "user,public_repo,notifications",allow_private_emails: true]}
        ]
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
        client_id: System.get_env("GITHUB_CLIENT_ID"),

@@ -1,6 +1,5 @@
 defmodule HelloWeb.Sys.AccountController do
   use HelloWeb, :controller
-  plug Ueberauth
   alias Hello.Sys.Accounts
 
   def index(conn, _params) do

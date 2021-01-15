@@ -281,14 +281,14 @@
 		/* 用户管理-停用 */
 		function disable(userId) {
 			//$.modal.confirm("确认要停用用户吗？", function() {
-				$.operate.get( "<%= sys_user_path(@conn, :update) %>?user[id]="+userId+"&user[status]=1");
+				$.operate.get( "<%= sys_user_path(@conn, :update_status) %>?user[id]="+userId+"&user[status]=1");
 		    //})
 		}
 
 		/* 用户管理启用 */
 		function enable(userId) {
 			//$.modal.confirm("确认要启用用户吗？", function() {
-				$.operate.get("<%= sys_user_path(@conn, :update) %>?user[id]="+userId+"&user[status]=0");
+				$.operate.get("<%= sys_user_path(@conn, :update_status) %>?user[id]="+userId+"&user[status]=0");
 		    //})
 		}
         		function addnew() {
