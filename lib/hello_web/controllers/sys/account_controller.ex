@@ -18,12 +18,6 @@ defmodule HelloWeb.Sys.AccountController do
 
   end
 
-
-  end
-
-
-  end
-
   def new(conn, _) do
     render(conn, "new.html", validate: "1")
   end

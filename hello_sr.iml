@@ -122,9 +122,9 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xlsxir" />
     </content>
-    <orderEntry type="jdk" jdkName="Elixir v1.12" jdkType="Elixir SDK" />
+    <orderEntry type="jdk" jdkName="Elixir at D:/Program Files (x86)/Elixir" jdkType="Elixir SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="phoenix" level="project" />
+    <orderEntry type="library" exported="" name="phoenix" level="project" />
     <orderEntry type="library" name="phoenix_pubsub" level="project" />
     <orderEntry type="library" name="phoenix_ecto" level="project" />
     <orderEntry type="library" name="postgrex" level="project" />
@@ -267,9 +267,6 @@
     <orderEntry type="library" name="ecto_psql_extras" level="project" />
     <orderEntry type="library" name="circular_buffer" level="project" />
     <orderEntry type="library" name="number" level="project" />
-    <orderEntry type="library" name="floki" level="project" />
-    <orderEntry type="library" name="html_entities" level="project" />
-    <orderEntry type="library" name="ecto_psql_extras" level="project" />
-    <orderEntry type="library" name="circular_buffer" level="project" />
+    <orderEntry type="library" name="poolboy" level="project" />
   </component>
 </module>
