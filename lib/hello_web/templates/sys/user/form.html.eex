@@ -4,6 +4,7 @@
  <link href="<%= static_path(@conn, "/ajax/libs/bootstrap-select/bootstrap-select.css") %>" rel="stylesheet"/>
 <body class="white-bg">
     <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+
          <%= form_for @changeset, @action,[method: :post,multipart: true,class: :"form-horizontal", id: "inputForm"], fn f -> %>
          <%= hidden_input f, :id %>
             <h4 class="form-header h4">基本信息</h4>

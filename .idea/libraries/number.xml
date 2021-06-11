@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="number" type="mix">
-    <CLASSES />
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/number/ebin" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/deps/number/lib" />

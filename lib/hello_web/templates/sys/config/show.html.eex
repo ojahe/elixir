@@ -44,5 +44,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.config_path(@conn, :edit, @config) %></span>
-<span><%= link "Back", to: Routes.config_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.sys_config_path(@conn, :edit, @config) %></span>
+<span><%= link "Back", to: Routes.sys_config_path(@conn, :index) %></span>

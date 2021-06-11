@@ -7,6 +7,20 @@ defmodule Hello.Sys do
   alias Hello.Sys.User
   alias Hello.Sys.Account
   @doc """
+
+  new_sample = Ecto.put_meta(sample, prefix: "public")
+  %MyApp.Sample{}
+  MyApp.Repo.insert new_sample
+  {:ok, %MyApp.Sample{}}
+  [sample] = MyApp.Repo.all Sample, prefix: "public"
+  [%MyApp.Sample{}]
+  Ecto.get_meta(sample, :prefix)
+  "public"
+
+
+
+
+
   Returns the list of users.
 
   ## Examples
@@ -50,17 +64,16 @@ defmodule Hello.Sys do
       else
         conditions
       end
-
     conditions =
       if params["deptId"]  && params["deptId"]!="" do
-        dynamic([s],fragment(" dept_id = ?  or dept_id IN ( select t.id from  sys_dept t where  FIND_IN_SET ( ?,t.ancestors))",^(params["deptId"]),^(params["deptId"]))  and ^conditions)
-
+        dynamic([s],fragment(" dept_id = ?  or dept_id IN ( select t.id from  sys_dept t where  ? = ANY(STRING_TO_ARRAY(t.ancestors,','))  )",type(^(params["deptId"]),:integer),type(^(params["deptId"]),:string))  and ^conditions)
       else
         conditions
       end
 
     params = Map.put(params, "page", String.to_integer(params["pageNum"]))
     params = Map.put(params, "page_size", String.to_integer(params["pageSize"]))
+
     User
     |> where([p],^conditions)
     |> order_by(^(Utils.get_order_by(params["orderByColumn"],params["isAsc"])))
@@ -71,6 +84,8 @@ defmodule Hello.Sys do
     |> preload(:posts)
     |>  Repo.paginate(params)
   end
+
+
 
   @doc """
   Gets a single user.
@@ -84,6 +99,8 @@ defmodule Hello.Sys do
 
       iex> get_user!(456)
       ** (Ecto.NoResultsError)
+
+
 
   """
   def get_user!(id) do
@@ -527,8 +544,8 @@ defmodule Hello.Sys do
     Dicttype
     |> where([p],^conditions)
     |> order_by(^(Utils.get_order_by(params["orderByColumn"],params["isAsc"])))
-    |> preload(:inserted_by)
-    |> preload(:updated_by)
+#    |> preload(:inserted_by)
+#    |> preload(:updated_by)
     |>  Repo.paginate(params)
   end
 
@@ -563,8 +580,8 @@ defmodule Hello.Sys do
     Dicttype
     |> where([p],^conditions)
     |> order_by(^({:asc, :dict_type}))
-    |> preload(:inserted_by)
-    |> preload(:updated_by)
+      #   |> preload(:inserted_by)
+      #   |> preload(:updated_by)
     |> Repo.all
   end
 
@@ -582,7 +599,9 @@ defmodule Hello.Sys do
       ** (Ecto.NoResultsError)
 
   """
-  def get_dicttype!(id), do: Repo.get!(Dicttype, id)  |>  Repo.preload(:inserted_by) |>  Repo.preload(:updated_by)
+  def get_dicttype!(id), do: Repo.get!(Dicttype, id)
+#                             |>  Repo.preload(:inserted_by)
+#                             |>  Repo.preload(:updated_by)
 
   @doc """
   Creates a dicttype.
@@ -704,8 +723,8 @@ defmodule Hello.Sys do
     Dictdata
     |> where([p],^conditions)
     |> order_by(^(Utils.get_order_by(params["orderByColumn"],params["isAsc"])))
-    |> preload(:inserted_by)
-    |> preload(:updated_by)
+#    |> preload(:inserted_by)
+#    |> preload(:updated_by)
     |>  Repo.paginate(params)
   end
 
@@ -728,7 +747,8 @@ defmodule Hello.Sys do
       ** (Ecto.NoResultsError)
 
   """
-  def get_dictdata!(id), do: Repo.get!(Dictdata, id)  |>  Repo.preload(:inserted_by) |>  Repo.preload(:updated_by)
+  def get_dictdata!(id), do: Repo.get!(Dictdata, id)
+#                             |>  Repo.preload(:inserted_by) |>  Repo.preload(:updated_by)
 
   @doc """
   Creates a dictdata.

@@ -39,13 +39,16 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mime" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/mimerl" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/myxql" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/number" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/oauth2" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/parse_trans" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/pbkdf2_elixir" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_html" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_live_dashboard" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_live_reload" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_live_view" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/phoenix_pubsub" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/plug" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/plug_cowboy" />
@@ -59,6 +62,8 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/scrivener_html" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ssl_verify_fun" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/telemetry" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/telemetry_metrics" />
+      <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/telemetry_poller" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/turbo_ecto" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/turbo_html" />
       <excludeFolder url="file://$MODULE_DIR$/_build/dev/lib/ueberauth" />
@@ -117,7 +122,7 @@
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/unicode_util_compat" />
       <excludeFolder url="file://$MODULE_DIR$/_build/prod/lib/xlsxir" />
     </content>
-    <orderEntry type="jdk" jdkName="Elixir 1.11.1" jdkType="Elixir SDK" />
+    <orderEntry type="jdk" jdkName="Elixir v1.12" jdkType="Elixir SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="phoenix" level="project" />
     <orderEntry type="library" name="phoenix_pubsub" level="project" />
@@ -255,5 +260,16 @@
     <orderEntry type="library" name="ueberauth_identity" level="project" />
     <orderEntry type="library" name="dogma" level="project" />
     <orderEntry type="library" name="guardian_db" level="project" />
+    <orderEntry type="library" name="phoenix_live_view" level="project" />
+    <orderEntry type="library" name="phoenix_live_dashboard" level="project" />
+    <orderEntry type="library" name="floki" level="project" />
+    <orderEntry type="library" name="html_entities" level="project" />
+    <orderEntry type="library" name="ecto_psql_extras" level="project" />
+    <orderEntry type="library" name="circular_buffer" level="project" />
+    <orderEntry type="library" name="number" level="project" />
+    <orderEntry type="library" name="floki" level="project" />
+    <orderEntry type="library" name="html_entities" level="project" />
+    <orderEntry type="library" name="ecto_psql_extras" level="project" />
+    <orderEntry type="library" name="circular_buffer" level="project" />
   </component>
 </module>

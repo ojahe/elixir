@@ -19,5 +19,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.role_path(@conn, :edit, @role) %></span>
-<span><%= link "Back", to: Routes.role_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.sys_role_path(@conn, :edit, @role) %></span>
+<span><%= link "Back", to: Routes.sys_role_path(@conn, :index) %></span>

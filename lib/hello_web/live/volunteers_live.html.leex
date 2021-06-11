@@ -1,0 +1,19 @@
+<%= live_component @socket,
+                   HelloWeb.HeaderComponent,
+                   title: "Volunteer Check-In",
+                   subtitle: @recent_activity %>
+
+<div id="checkin">
+  <%= live_component @socket,
+                     HelloWeb.VolunteerFormComponent,
+                     id: :new %>
+
+  <div id="volunteers" phx-update="prepend">
+    <%= for volunteer <- @volunteers do %>
+      <%= live_component @socket,
+                         HelloWeb.VolunteerComponent,
+                         volunteer: volunteer,
+                         id: volunteer.id  %>
+    <% end %>
+  </div>
+</div>

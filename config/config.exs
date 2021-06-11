@@ -5,7 +5,8 @@
 # is restricted to this project.
 use Mix.Config
 
-# General application configuration
+# General application configuration： For Ecto’s mix tasks to be able to find the repository,
+#This will ensure that all the ecto.* mix tasks will work with our project
 config :hello,
   ecto_repos: [Hello.Repo]
 
@@ -13,9 +14,10 @@ config :hello,
 config :hello, HelloWeb.Endpoint,
   url: [host: "127.0.0.1"],
   secret_key_base: "Hr4JA3BA2m9Ji5DlmYUcVsj6pR2Ijb02iiPclPXOQoU1hPhj3sKqtI8VwtV+QRFK",
-  render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
   #pubsub: [name: Hello.PubSub,adapter: Phoenix.PubSub.PG2],
-  pubsub_server: Hello.PubSub
+  pubsub_server: Hello.PubSub,
+  live_view: [signing_salt: "VSFrNTTQ"]
 config :turbo_ecto, Turbo.Ecto,
        repo: Hello.Repo,
        per_page: 10
@@ -40,7 +42,7 @@ config :hello, :generators,
 config :arc,
        storage: Arc.Storage.Local
 config :ueberauth, Ueberauth,
-       json_library: Poison,# default is Jason
+       #json_library: Poison,# default is Jason
        base_path: "/auth", # default is "/auth"
        providers: [
          identity: {Ueberauth.Strategies.Identity,[callback_methods: ["POST"],request_path: "/identity",callback_path: "/identity/callback"]},

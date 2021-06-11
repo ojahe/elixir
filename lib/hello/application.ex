@@ -6,16 +6,34 @@ defmodule Hello.Application do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    # List all child processes to be supervised
+    #children = [
+    #MyApp.Repo
+    #]
+    #Elixir 1.5 introduced child specifications, which simplified declaring the list
+    #of child processes. If you’re using an older version of Elixir, you’ll need to
+    #write this slightly differently:
+    ## for Elixir 1.4
+    #import Supervisor.Spec, warn: false
+    #children = [
+    #supervisor(MyApp.Repo, [])
+    #]
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Hello.Repo, []),
-      {Phoenix.PubSub, [name: Hello.PubSub, adapter: Phoenix.PubSub.PG2]},
+      #supervisor(Hello.Repo, []),
+      Hello.Repo,
+      # Start the PubSub system
+      # {Phoenix.PubSub, [name: Hello.PubSub, adapter: Phoenix.PubSub.PG2]},
+      {Phoenix.PubSub, name: Hello.PubSub},
       # Start the endpoint when the application starts
-      supervisor(HelloWeb.Endpoint, []),
+      # Start the Endpoint (http/https)
+      #supervisor(HelloWeb.Endpoint, []),
+      HelloWeb.Endpoint,
       # Start your own worker by calling: Hello.Worker.start_link(arg1, arg2, arg3)
       # worker(Hello.Worker, [arg1, arg2, arg3]),
-      supervisor(HelloWeb.Presence, []),
+      HelloWeb.Presence
+      #supervisor(HelloWeb.Presence, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

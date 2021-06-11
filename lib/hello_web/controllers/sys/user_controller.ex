@@ -52,6 +52,17 @@ defmodule HelloWeb.Sys.UserController do
           %{
             code: 500,
             msg: ~s(#{gettext("New")}#{dgettext("sys_user","User")}#{gettext("fail")}),
+
+#def error_tag(form, field) do
+#if error = form.errors[field] do
+#content_tag(:span, translate_error(error))
+#end
+#end
+#defp translate_error({msg, opts}) do
+#Enum.reduce(opts, msg, fn {key, value}, msg ->
+#String.replace(msg, "%{#{key}}", to_string(value))
+#end)
+#end
             errors:
               Enum.map(
               changeset.errors,
@@ -59,6 +70,7 @@ defmodule HelloWeb.Sys.UserController do
               -> if propName == :password_hash do
                    %{"propName" => "password", "errorMsg" => errorMsg}
                  else
+                   #  {"must be greater than %{number}", [number: 0]}.
                    %{"propName" => to_string(propName), "errorMsg" => errorMsg}
                  end
               end

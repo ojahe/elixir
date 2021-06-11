@@ -6,12 +6,22 @@ defmodule HelloWeb.Router do
    # plug Ueberauth
     plug :accepts, ["html"]
     plug :fetch_session
+    plug :fetch_live_flash
+    #plug :put_root_layout, {HelloWeb.LiveLayoutView, :root}
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
-
-
+  pipeline :browser_live do
+    # plug Ueberauth
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {HelloWeb.LayoutView, :root}
+    plug :fetch_flash
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
 
   # This plug will look for a Guardian token in the session in the default location
   # Then it will attempt to load the resource found in the JWT.
@@ -49,7 +59,6 @@ defmodule HelloWeb.Router do
     plug Guardian.Plug.VerifyHeader, realm: "Bearer"
     plug Guardian.Plug.LoadResource
   end
-
   scope "/auth", HelloWeb.Sys do
     pipe_through :browser
 
@@ -259,16 +268,44 @@ defmodule HelloWeb.Router do
         |> Phoenix.Controller.put_flash(:error, "您还没有登录！")
         |> Phoenix.Controller.redirect(to: "/auth/identity")
         |> halt()
-      user_id ->
-        assign(conn, :current_user, Hello.Sys.get_user2!(user_id))
+     user_id ->conn
+#       assign(conn, :current_user, Hello.Sys.get_user2!(user_id))
     end
   end
 
   defp curren_user(conn, _) do
     case get_session(conn, :user_id) do
       nil -> conn
-      user_id ->
-        assign(conn, :current_user, Hello.Sys.get_user2!(user_id))
+      user_id -> assign(conn, :current_user, Hello.Sys.get_user2!(user_id))
+    end
+  end
+
+
+  scope "/live", HelloWeb.Live do
+    pipe_through :browser_live
+
+    live "/", PageLive
+    live "/sandbox", SandboxLive
+    live "/volunteers", VolunteersLive
+    live "/underwater", UnderwaterLive
+    live "/underwater/show", UnderwaterLive, :show_modal
+
+  end
+
+
+  # Enables LiveDashboard only for development
+  #
+  # If you want to use the LiveDashboard in production, you should put
+  # it behind authentication and allow only admins to access it.
+  # If your application does not have an admins-only section yet,
+  # you can use Plug.BasicAuth to set up some basic authentication
+  # as long as you are also using SSL (which you should anyway).
+  if Mix.env() in [:dev, :test] do
+    import Phoenix.LiveDashboard.Router
+
+    scope "/" do
+      pipe_through :browser
+      live_dashboard "/dashboard", metrics: HelloWeb.Telemetry
     end
   end
 end

@@ -12,7 +12,7 @@
       <!--[if lt IE 9]>
       <meta http-equiv="refresh" content="0;ie.html" />
       <![endif]-->
-      <link href="<%= static_path(@conn, "/static/favicon.ico") %>" rel="stylesheet"/>
+      <link href="<%= static_path(@conn, "/favicon.ico") %>" rel="stylesheet"/>
       <style type="text/css">label.error { position:inherit;  }</style>
 
   </head>

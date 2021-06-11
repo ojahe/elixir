@@ -11,8 +11,18 @@ config :hello, HelloWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+#  watchers: [node: ["node_modules/brunch/bin/brunch",
+#               "watch", "--stdin",
+#                    cd: Path.expand("../assets", __DIR__)]]
+  watchers: [
+        node: [
+        "node_modules/webpack/bin/webpack.js",
+        "--mode",
+        "development",
+        "--watch-stdin",
+        cd: Path.expand("../assets", __DIR__)
+              ]
+          ]
 
 # ## SSL Support
 #
@@ -47,14 +57,16 @@ config :logger, :console, format: "[$level] $message\n"
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
-
+query_args = ["SET search_path TO public", []]
 # Configure your database
 config :hello, Hello.Repo,
-  adapter: Ecto.Adapters.MySQL,
+ # adapter: Ecto.Adapters.MySQL,
+  adapter: Ecto.Adapters.Postgres,
   hostname: "localhost",
-  port: 3306,
-  username: "root",
-  password: "123456",
-  database: "hello_ry",
+  port: 5432,
+  username: "postgres",
+  password: "postgres",
+  database: "hello_dev",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  after_connect: {Postgrex, :query!, query_args}

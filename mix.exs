@@ -42,43 +42,44 @@ defmodule Hello.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4", override: true},
-      {:phoenix_ecto, "~> 4.0.0"},
-      {:phoenix_html, "~> 2.13.3"},
+      {:phoenix, "~> 1.5.9"},
+
+
+      #{:phoenix_ecto, "~> 4.0.0"},
+      {:phoenix_ecto, "~> 4.1"},
+      #{:ecto_sql, "~> 3.1.6"},
+      {:ecto_sql, "~> 3.4"},
+      {:phoenix_html, "~> 2.14.3"},
       {:scrivener_ecto, "~> 2.0"},
-      {:scrivener_html, "~> 1.8"},
+      # {:scrivener_html, "~> 1.8"},
       #{:phoenix, "~> 1.3.0"},
       #{:phoenix_ecto, "~> 3.0"},
-      #{:phoenix_html, "~> 2.10"},
-
+      {:phoenix_pubsub, "~> 2.0"},
       #{:phoenix_pubsub, "~> 1.0"},
 
       {:postgrex, ">= 0.0.0"},
 
-      {:phoenix_live_reload, "~> 1.0", only: :dev},
+      #{:phoenix_live_reload, "~> 1.0", only: :dev},
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:gettext, "~> 0.11"},
       {:cors_plug, "~> 2.0"},
       {:cowboy, "~> 2.8.0", override: true},
-      {:plug_cowboy, "~> 2.0"},
-     # {:cowboy, "~> 1.0"},
-     # {:plug_cowboy, "~> 1.0"},
+      {:plug_cowboy, "~> 2.1"},
       {:turbo_ecto, "~> 0.4.2"},
       {:turbo_html, "~> 0.2.0"},
      #{:pbkdf2_elixir, path: "./deps/pbkdf2",app: false,override: true},
-      {:pbkdf2_elixir, "~> 0.12"},
+      {:pbkdf2_elixir, "~> 0.12", override: true},
       {:mariaex, ">= 0.0.0"},
       {:csv, "~> 1.2.3"},
       {:elixlsx, "~> 0.4.2"},
       #{:myxql, ">= 0.0.0"},
       {:myxql, "~> 0.4.0", override: true},
        {:geo, "~> 3.3"},
-          #{:jason, "~> 1.0"},
       {:distillery, "~> 2.0"},
       {:poison, "~> 3.0", override: true},
-      {:ecto, "~> 3.1.7"},
-      {:ecto_sql, "~> 3.1.6"},
+      #  {:ecto, "~> 3.1.7"},
      # {:uuid, "~> 1.1.8"},
-      {:jason, "~> 1.1"},
+      {:jason, "~> 1.2"},
       {:xlsxir, "~> 1.6.4"},
       {:arc, "~> 0.11.0"},
       {:poolboy, "~> 1.5.1"},
@@ -95,6 +96,15 @@ defmodule Hello.Mixfile do
       #{:sorted_set_nif, "~> 1.0.0"}
       #{:comeonin, "~> 4.1"},
       #{:bcrypt_elixir, "~> 1.0"}
+      {:phoenix_live_view, "~> 0.15.1"},
+      #{:floki, ">= 0.30.0", only: :test},
+      #{:phoenix_html, "~> 2.11"},
+
+      {:phoenix_live_dashboard, "~> 0.4"},
+      {:telemetry_metrics, "~> 0.4"},
+      {:telemetry_poller, "~> 0.4"},
+      {:number, "~> 1.0"}
+
     ]
   end
 

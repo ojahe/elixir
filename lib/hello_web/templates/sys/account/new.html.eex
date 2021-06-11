@@ -12,7 +12,7 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
-    <link href="<%= static_path(@conn, "/static/favicon.ico") %>" rel="stylesheet"/>
+    <link href="<%= static_path(@conn, "/favicon.ico") %>" rel="stylesheet"/>
     <style type="text/css">label.error { position:inherit;  }</style>
     <script>
         if(window.top!==window.self){window.top.location=window.location};
@@ -37,7 +37,7 @@
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> jQuery</li>
                         <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> Bootstrap</li>
                     </ul>
-                    <strong>还没有账号？ <a href="#" onclick="addnew()">立即添加&raquo;</a></strong>
+                    <strong>还没有账号？ <a href="#" onclick="">立即添加&raquo;</a></strong>
                 </div>
             </div>
             <div class="col-sm-5">

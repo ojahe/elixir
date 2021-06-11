@@ -10,7 +10,7 @@
                     <span class="required ">*</span> <%= label f, :role_name,dgettext("sys_role","Role name") %>:<i
                         class="fa icon-question hide"></i></label>
                 <div class="col-sm-8">
-                    <%= text_input f, :role_name,"required": true, class: "form-control" %>
+                    <%= text_input f, :role_name,required: true, class: "form-control" %>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                     <span class="required ">*</span> <%= label f, :role_code,dgettext("sys_role","Role code") %>:<i
                         class="fa icon-question hide"></i></label>
                 <div class="col-sm-8">
-                    <%= text_input f, :role_code,"required": true, class: "form-control" %>
+                    <%= text_input f, :role_code,required: true, class: "form-control" %>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                     <span class="required ">*</span> <%= label f, :role_sort,dgettext("sys_role","Role sort") %>:<i
                         class="fa icon-question hide"></i></label>
                 <div class="col-sm-8">
-                    <%= number_input f, :role_sort,"required": true, class: "form-control" %>
+                    <%= number_input f, :role_sort,required: true, class: "form-control" %>
                 </div>
             </div>
         </div>

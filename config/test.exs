@@ -11,6 +11,7 @@ config :logger, level: :warn
 
 # Configure your database
 config :hello, Hello.Repo,
+  pool: Ecto.Adapters.SQL.Sandbox,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
   password: "123456",

@@ -3,7 +3,12 @@ defmodule Hello.Sys.Account do
   import Ecto.Changeset
   alias Hello.Sys.User
   #alias Comeonin.Bcrypt
+#现在MyApp.Repo.all MyApp.Mapping，无论:after_connect回调中为连接配置的值如何，默认情况下现在运行将在“ public”前缀上运行。
+#类似会发生insert，update以及类似的操作，@schema_prefix使用，
+#除非:prefix明确地通过改变Ecto.put_meta/2或通过传递:prefix选项到存储库操作。
 
+
+  @schema_prefix "public"
   schema "sys_account" do
     field :password, :string, virtual: true
     field :password_hash, :string

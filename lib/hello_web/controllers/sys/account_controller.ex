@@ -3,9 +3,25 @@ defmodule HelloWeb.Sys.AccountController do
   alias Hello.Sys.Accounts
 
   def index(conn, _params) do
-    conn
-    |> put_status(202)
-    |> render "index.html"
+    case get_session(conn, :user_id) do
+      nil ->
+        conn
+        |> Phoenix.Controller.put_flash(:error, "您还没有登录！")
+        |> Phoenix.Controller.redirect(to: "/auth/identity")
+        |> halt()
+      user_id ->conn
+                |>assign( :current_user, Hello.Sys.get_user2!(user_id))
+                |> put_status(202)
+                |> render "index.html"
+    end
+
+
+  end
+
+
+  end
+
+
   end
 
   def new(conn, _) do
@@ -19,7 +35,7 @@ defmodule HelloWeb.Sys.AccountController do
      conn
         |> configure_session(renew: true)
         |> put_session(:user_id, user.id)
-          |>json(
+        |>json(
           %{
             code: 0,
             msg: ~s(登录成功),

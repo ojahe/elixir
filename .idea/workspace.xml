@@ -1,33 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dde93189-b3b1-482c-ad28-4d98868b29e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/dogma.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guardian_db.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth_identity.xml" afterDir="false" />
+    <list default="true" id="dde93189-b3b1-482c-ad28-4d98868b29e6" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;priv/repo/hello_ry.sql">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/circular_buffer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ecto_psql_extras.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/floki.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/html_entities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/live_view.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/hooks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/incident-map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/line-chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/uploaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/ajax/libs/layui/css/modules/layer/moon/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/ajax/libs/layui/css/modules/layer/moon/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/1650-super-hawk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/1760-retriever-jon-deluxe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/1850-super-hawk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/1950-super-hawk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/2050-authority.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/beneteau-first-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/beneteau-first-24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/beneteau-oceanis-31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/deep-sea-elite.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/glastron-gt180.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/glastron-gt225.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/rs-cat-16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/rs-feva.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/rs-quest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/yamaha-212x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/yamaha-275e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/yamaha-275sd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/boats/yamaha-sx190.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/check-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/deploy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/fork.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/juggling/juggling-9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/license.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/light-off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/light-on.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/location.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/phoenix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/phone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/refresh.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/server.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/spy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/terminal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/static/images/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/live/sandbox_calculator.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/live/volunteers.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/live/volunteers/volunteer.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/creatures_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/header_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/modal_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/quote_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/sandbox_calculator_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/volunteer_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/components/volunteer_form_component.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/live_helpers.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/page_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/page_live.html.leex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/sandbox_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/underwater_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/volunteers_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/volunteers_live.html.leex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/telemetry.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/templates/layout/live.html.leex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/templates/layout/root.html.leex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mix3.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/.formatter.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20200512165945_create_boats.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20200601231552_create_servers.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20200609190504_create_donations.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20200702194940_create_volunteers.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20200820195223_create_pizza_orders.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20201222192531_create_users_auth_tables.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20210204162933_create_incidents.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/priv/repo/migrations/20210322210106_create_desks.exs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rebar3_2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rebar3_3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rebar3_4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/number.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_live_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_live_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rebar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rebar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/brunch-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/phoenix.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/phoenix.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/static/ajax/libs/layer/layer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/static/ajax/libs/layer/layer.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/dev.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/dev.exs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/test.exs" beforeDir="false" afterPath="$PROJECT_DIR$/config/test.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_sr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_sr.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/application.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/application.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/repo.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/repo.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello/sys/account.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/account.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello/sys/dept.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/dept.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello/sys/post.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/post.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello/sys/role.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/role.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello/sys/sys.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/sys.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/auth_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/auth_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/menu_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/menu_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/post_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/post_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/role_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/role_controller.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/user_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/user_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/endpoint.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/endpoint.ex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/router.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/hello/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/hello/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/new.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/account/new.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/area/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/area/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/area/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/area/show.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/auth/request.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/auth/request.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/company/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/company/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/company/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/company/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/config/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/config/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/dept/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/dept/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/dictdata/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/dictdata/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/dicttype/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/dicttype/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/menu/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/menu/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/module/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/module/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/post/show.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/form.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/index.html.eex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/index.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/index.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/role/show.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/form.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/form.html.eex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/show.html.eex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/templates/sys/user/show.html.eex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +218,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -95,29 +226,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578477884229" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/deps/phoenix/priv" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="Elixir Compiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\layout" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\live\layout" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\views\live" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\live_layout" />
       <recent name="E:\elixir_p\hellory\lib\hello_web\views\sys" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\controllers\sys" />
-      <recent name="E:\elixir_p\hellory\lib\hello\chat" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\sys\account" />
-      <recent name="E:\elixir_p\hellory\lib\hello\sys" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\elixir_p\hellory\deps\phoenix\priv" />
-      <recent name="E:\elixir_p\hellory\_build\dev\lib\phoenix\priv" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\views" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\templates" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\controllers" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\live\components" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\live" />
+      <recent name="E:\elixir_p\hellory\priv\repo" />
+      <recent name="E:\elixir_p\hellory\lib\hello\live" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -595,6 +726,63 @@
       <workItem from="1610121006251" duration="58887000" />
       <workItem from="1610675290814" duration="1094000" />
       <workItem from="1610681460497" duration="403000" />
+      <workItem from="1611249698333" duration="515000" />
+      <workItem from="1611282558888" duration="3753000" />
+      <workItem from="1611418353175" duration="6557000" />
+      <workItem from="1611761985317" duration="641000" />
+      <workItem from="1612019052877" duration="2164000" />
+      <workItem from="1612196743310" duration="1180000" />
+      <workItem from="1612274883459" duration="2936000" />
+      <workItem from="1612348608066" duration="9782000" />
+      <workItem from="1612743015993" duration="33000" />
+      <workItem from="1612758281725" duration="1513000" />
+      <workItem from="1612858807269" duration="1780000" />
+      <workItem from="1614269906526" duration="336000" />
+      <workItem from="1614270325431" duration="1370000" />
+      <workItem from="1614323154149" duration="8000" />
+      <workItem from="1614326813352" duration="870000" />
+      <workItem from="1614330819035" duration="198000" />
+      <workItem from="1614349747664" duration="402000" />
+      <workItem from="1614350172412" duration="153000" />
+      <workItem from="1614350449942" duration="6032000" />
+      <workItem from="1614356617690" duration="1812000" />
+      <workItem from="1614392452373" duration="22000" />
+      <workItem from="1615032729366" duration="5785000" />
+      <workItem from="1615166793015" duration="1774000" />
+      <workItem from="1615455801510" duration="1394000" />
+      <workItem from="1615517298028" duration="3095000" />
+      <workItem from="1615704962859" duration="2613000" />
+      <workItem from="1615862625222" duration="385000" />
+      <workItem from="1616465101520" duration="12869000" />
+      <workItem from="1616856748459" duration="3914000" />
+      <workItem from="1616896300002" duration="6378000" />
+      <workItem from="1617007792218" duration="63000" />
+      <workItem from="1618277907921" duration="70000" />
+      <workItem from="1619021518172" duration="1018000" />
+      <workItem from="1619098889295" duration="1240000" />
+      <workItem from="1619139379102" duration="79000" />
+      <workItem from="1619772726340" duration="616000" />
+      <workItem from="1621406915136" duration="4875000" />
+      <workItem from="1621587007561" duration="2446000" />
+      <workItem from="1621650252742" duration="476000" />
+      <workItem from="1621837788186" duration="1495000" />
+      <workItem from="1621860560258" duration="1069000" />
+      <workItem from="1622093594847" duration="1009000" />
+      <workItem from="1622261993571" duration="16220000" />
+      <workItem from="1622280598912" duration="8000" />
+      <workItem from="1622280676552" duration="53188000" />
+      <workItem from="1622422865232" duration="5175000" />
+      <workItem from="1622436815025" duration="1421000" />
+      <workItem from="1622446329727" duration="3087000" />
+      <workItem from="1622509690806" duration="622000" />
+      <workItem from="1622731010380" duration="5833000" />
+      <workItem from="1622768038291" duration="2460000" />
+      <workItem from="1622789700324" duration="1689000" />
+      <workItem from="1623136274795" duration="515000" />
+      <workItem from="1623137921546" duration="9061000" />
+      <workItem from="1623204059235" duration="16417000" />
+      <workItem from="1623252374225" duration="2210000" />
+      <workItem from="1623290295163" duration="21836000" />
     </task>
     <task id="LOCAL-00001" summary="初次提交">
       <created>1583766993115</created>
@@ -660,73 +848,99 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="初次提交" />
     <MESSAGE value="添加数据库脚本" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加数据库脚本" />
+    <MESSAGE value="升级版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="升级版本" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="439" y="93" key="#Project_Structure" timestamp="1603095753413">
+    <state x="841" y="377" key="#Notifications" timestamp="1623428177856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="439" y="93" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1603095753413" />
-    <state x="455" y="348" key="#Template_Data_Languages" timestamp="1610251181336">
+    <state x="841" y="377" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1623428177856" />
+    <state x="313" y="0" key="#Project_Structure" timestamp="1623138238858">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="313" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1623138238858" />
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1622746702261" />
+    <state x="703" y="319" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623427266281">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="455" y="348" key="#Template_Data_Languages/0.0.1920.1040@0.0.1920.1040" timestamp="1610251181336" />
-    <state x="664" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1609839631067">
+    <state x="703" y="319" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1623427266281" />
+    <state x="531" y="32" key="CommitChangelistDialog2" timestamp="1622391968984">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="664" y="442" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609839631067" />
-    <state x="557" y="85" key="CommitChangelistDialog2" timestamp="1609953593404">
+    <state x="531" y="32" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1622391968984" />
+    <state width="379" height="442" key="Diff.GoToChangePopup" timestamp="1623428045419">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="557" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609953593404" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1603074026623">
+    <state width="379" height="442" key="Diff.GoToChangePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1623428045419" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1623428233930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603074026623" />
-    <state x="651" y="70" key="FileChooserDialogImpl" timestamp="1609948491809">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623428233930" />
+    <state x="651" y="70" key="FileChooserDialogImpl" timestamp="1623427549289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="651" y="70" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609948491809" />
-    <state x="599" y="222" key="NewModule_or_Project.wizard" timestamp="1602512129390">
+    <state x="462" y="50" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1621407238986" />
+    <state x="651" y="70" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1623427549289" />
+    <state x="90" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1623210555992">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="90" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1366.728@0.0.1366.728" timestamp="1623210555992" />
+    <state width="1321" height="251" key="GridCell.Tab.0.bottom" timestamp="1623233676523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="251" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1623233676523" />
+    <state width="1877" height="371" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622402485172" />
+    <state width="1321" height="251" key="GridCell.Tab.0.center" timestamp="1623233676523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="251" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1623233676523" />
+    <state width="1877" height="371" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622402485171" />
+    <state width="1321" height="251" key="GridCell.Tab.0.left" timestamp="1623233676522">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="251" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1623233676522" />
+    <state width="1877" height="371" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622402485171" />
+    <state width="1321" height="251" key="GridCell.Tab.0.right" timestamp="1623233676523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1321" height="251" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1623233676523" />
+    <state width="1877" height="371" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622402485172" />
+    <state x="262" y="106" key="IDE.errors.dialog" timestamp="1623205786735">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="262" y="106" key="IDE.errors.dialog/0.0.1366.728@0.0.1366.728" timestamp="1623205786735" />
+    <state x="439" y="93" key="SettingsEditor" timestamp="1623427660991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="599" y="222" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1602512129390" />
-    <state x="789" y="220" key="RollbackChangesDialog" timestamp="1609949107941">
+    <state x="312" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1623292178003" />
+    <state x="439" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1623427660991" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1622350825970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="789" y="220" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609949107941" />
-    <state x="439" y="93" key="SettingsEditor" timestamp="1610112678142">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622350825970" />
+    <state x="551" y="252" key="Vcs.Push.Dialog.v2" timestamp="1623428222991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="439" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610112678142" />
-    <state x="0" y="0" key="Vcs.Push.Dialog.v2" timestamp="1609953982448">
+    <state x="551" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623428222991" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1623427662507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609953982448" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1609948767049">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623427662507" />
+    <state x="406" y="196" width="796" height="532" key="find.popup" timestamp="1623207633167">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="406" y="196" width="796" height="532" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1623207633167" />
+    <state x="571" y="322" width="1118" height="638" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622320251175" />
+    <state x="619" y="190" width="672" height="475" key="search.everywhere.popup" timestamp="1623403663024">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="619" y="190" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1623403663024" />
+    <state x="1120" y="293" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622276101268" />
+    <state x="241" y="209" key="vcs.ApplyPatchDifferentiatedDialog" timestamp="1623427888772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609948767049" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1603074026623">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603074026623" />
-    <state x="660" y="235" width="686" height="638" key="find.popup" timestamp="1610211055613">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="660" y="235" width="686" height="638" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610211055613" />
-    <state x="333" y="129" key="new project wizard" timestamp="1602511445703">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="333" y="129" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1602511445703" />
-    <state x="764" y="420" key="svn.upgradeDialog" timestamp="1609170255102">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="764" y="420" key="svn.upgradeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609170255102" />
-    <state x="724" y="382" key="svn4idea.checkout.options" timestamp="1609170245805">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="724" y="382" key="svn4idea.checkout.options/0.0.1920.1040@0.0.1920.1040" timestamp="1609170245805" />
+    <state x="241" y="209" key="vcs.ApplyPatchDifferentiatedDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623427888772" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

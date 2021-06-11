@@ -23,7 +23,7 @@
 							<label class="control-label col-sm-3" title="<%= dgettext("sys_area","Name") %>">
 								<span class="required ">*</span> <%= label f, :name,dgettext("sys_area","Name") %>:<i class="fa icon-question hide"></i></label>
 							<div class="col-sm-8">
-							 <%= text_input f, :name,"required": true, class: "form-control" %>
+							 <%= text_input f, :name,required: true, class: "form-control" %>
 							</div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 							<label class="control-label col-sm-3" title="<%= dgettext("sys_area","Code") %>">
 								<span class="required ">*</span> <%= label f, :code,dgettext("sys_area","Code") %>:<i class="fa icon-question hide"></i></label>
 							<div class="col-sm-8">
-							 <%= text_input f, :code,"required": true, class: "form-control" %>
+							 <%= text_input f, :code,required: true, class: "form-control" %>
 							</div>
 						</div>
 					</div>

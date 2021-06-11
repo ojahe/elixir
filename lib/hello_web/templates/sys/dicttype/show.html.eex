@@ -34,5 +34,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.dicttype_path(@conn, :edit, @dicttype) %></span>
-<span><%= link "Back", to: Routes.dicttype_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.sys_dicttype_path(@conn, :edit, @dicttype) %></span>
+<span><%= link "Back", to: Routes.sys_dicttype_path(@conn, :index) %></span>

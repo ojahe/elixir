@@ -69,5 +69,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: Routes.menu_path(@conn, :edit, @menu) %></span>
-<span><%= link "Back", to: Routes.menu_path(@conn, :index) %></span>
+<span><%= link "Edit", to: Routes.sys_menu_path(@conn, :edit, @menu) %></span>
+<span><%= link "Back", to: Routes.sys_menu_path(@conn, :index) %></span>
