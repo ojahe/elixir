@@ -12,7 +12,8 @@ defmodule HelloWeb.Sys.DictdataController do
 
 
   def list_data(conn, params) do
-    result = Sys.list_dictdatas(params)
+    # IO.puts( :os.system_time(:millisecond))
+     result = Sys.list_dictdatas(params)
     json(
       conn,
       %{

@@ -2,6 +2,7 @@
   <library name="oauth2" type="mix">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/oauth2/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/oauth2/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

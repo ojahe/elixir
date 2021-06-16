@@ -2,6 +2,7 @@
   <library name="ueberauth_identity" type="mix">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/_build/dev/lib/ueberauth_identity/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/prod/lib/ueberauth_identity/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

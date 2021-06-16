@@ -289,6 +289,10 @@ defmodule HelloWeb.Router do
     live "/volunteers", VolunteersLive
     live "/underwater", UnderwaterLive
     live "/underwater/show", UnderwaterLive, :show_modal
+    live "/chart", ChartLive
+    live "/paginate", PaginateLive
+    live "/filter", FilterLive
+    live "/dict", DictLive
 
   end
 

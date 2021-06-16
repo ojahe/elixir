@@ -1,67 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dde93189-b3b1-482c-ad28-4d98868b29e6" name="Default Changelist" comment="升级elixir1.12,增加liveview例子">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/cowlib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/erlsom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/erlsom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/idna.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/idna.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/metrics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/metrics.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/poolboy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/poolboy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rebar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rebar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/1650-super-hawk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/1760-retriever-jon-deluxe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/1850-super-hawk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/1950-super-hawk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/2050-authority.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/beneteau-first-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/beneteau-first-24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/beneteau-oceanis-31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/deep-sea-elite.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/glastron-gt180.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/glastron-gt225.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/juggling-9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/phoenix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/rebar3_2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/rs-cat-16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/rs-feva.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/rs-quest.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/yamaha-212x.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/yamaha-275e.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/yamaha-275sd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06_[Default_Changelist]/yamaha-sx190.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2021_6_11_18_06__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="dde93189-b3b1-482c-ad28-4d98868b29e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/hello/boats.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/boats/boat.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/donations.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello/donations/donation.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/chart_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/dict_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/dict_live.html.leex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/filter_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/paginate_live.ex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hello_web/live/paginate_live.html.leex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/guardian.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/guardian.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jose.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jose.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/number.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/oauth2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/oauth2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_live_dashboard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/phoenix_live_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/phoenix_live_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_metrics.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/telemetry_poller.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ueberauth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ueberauth_github.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth_github.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/ueberauth_identity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ueberauth_identity.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/phoenix.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/phoenix.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_sr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hello_sr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/account_controller.ex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.exs" beforeDir="false" afterPath="$PROJECT_DIR$/mix.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mix.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mix.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/priv/repo/seeds.exs" beforeDir="false" afterPath="$PROJECT_DIR$/priv/repo/seeds.exs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rebar3_2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rebar3_3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rebar3_4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello/sys/sys.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello/sys/sys.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/controllers/sys/dictdata_controller.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/controllers/sys/dictdata_controller.ex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hello_web/router.ex" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hello_web/router.ex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +105,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578477884229" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/hello_web/live/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/hello" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -146,20 +114,23 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\elixir_p\hellory\lib\hello" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\live" />
+      <recent name="E:\elixir_p\hellory\lib\hello_web\live\components" />
+      <recent name="E:\elixir_p\hellory\priv\repo" />
+      <recent name="E:\elixir_p\hellory\lib\hello\live" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\elixir_p\hellory\lib\hello_web\templates\layout" />
       <recent name="E:\elixir_p\hellory\lib\hello_web\templates\live\layout" />
       <recent name="E:\elixir_p\hellory\lib\hello_web\views\live" />
       <recent name="E:\elixir_p\hellory\lib\hello_web\templates\live_layout" />
       <recent name="E:\elixir_p\hellory\lib\hello_web\views\sys" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\elixir_p\hellory\lib\hello_web\live\components" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\live" />
-      <recent name="E:\elixir_p\hellory\priv\repo" />
-      <recent name="E:\elixir_p\hellory\lib\hello\live" />
-      <recent name="E:\elixir_p\hellory\lib\hello_web\templates\layout" />
     </key>
   </component>
   <component name="RunManager">
@@ -695,6 +666,8 @@
       <workItem from="1623204059235" duration="16417000" />
       <workItem from="1623252374225" duration="2210000" />
       <workItem from="1623290295163" duration="21836000" />
+      <workItem from="1623462979503" duration="39867000" />
+      <workItem from="1623725730074" duration="5158000" />
     </task>
     <task id="LOCAL-00001" summary="初次提交">
       <created>1583766993115</created>
@@ -738,7 +711,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609953626807</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="升级elixir1.12,增加liveview例子">
+      <created>1623433683389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623433683389</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,10 +758,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="273" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623432060163" />
-    <state x="531" y="32" key="CommitChangelistDialog2" timestamp="1623433508805">
+    <state x="531" y="32" key="CommitChangelistDialog2" timestamp="1623433673473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="531" y="32" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1623433508805" />
+    <state x="531" y="32" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1623433673473" />
     <state x="651" y="70" key="FileChooserDialogImpl" timestamp="1623431991964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -824,20 +804,24 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1622350825970" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1623432804121">
+    <state x="551" y="252" key="Vcs.Push.Dialog.v2" timestamp="1623433685560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623432804121" />
-    <state x="406" y="196" width="796" height="532" key="find.popup" timestamp="1623207633167">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="551" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1623433685560" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1623606559093">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1623606559093" />
+    <state x="571" y="322" width="1118" height="638" key="find.popup" timestamp="1623605792912">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="406" y="196" width="796" height="532" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1623207633167" />
-    <state x="571" y="322" width="1118" height="638" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622320251175" />
-    <state x="619" y="190" width="672" height="475" key="search.everywhere.popup" timestamp="1623403663024">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="571" y="322" width="1118" height="638" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1623605792912" />
+    <state x="1120" y="293" width="672" height="678" key="search.everywhere.popup" timestamp="1623605525841">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="619" y="190" width="672" height="475" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1623403663024" />
-    <state x="1120" y="293" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1622276101268" />
+    <state x="1120" y="293" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1623605525841" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

@@ -718,11 +718,11 @@ defmodule Hello.Sys do
       else
         conditions
       end
-    params = Map.put(params, "page", String.to_integer(params["pageNum"]))
-    params = Map.put(params, "page_size", String.to_integer(params["pageSize"]))
+    params = Map.put(params, "page", String.to_integer(params["pageNum"] || "1"))
+    params = Map.put(params, "page_size", String.to_integer(params["pageSize"]||"10"))
     Dictdata
     |> where([p],^conditions)
-    |> order_by(^(Utils.get_order_by(params["orderByColumn"],params["isAsc"])))
+    |> order_by(^(Utils.get_order_by(params["orderByColumn"] ||"id",params["isAsc"] || "asc")))
 #    |> preload(:inserted_by)
 #    |> preload(:updated_by)
     |>  Repo.paginate(params)
